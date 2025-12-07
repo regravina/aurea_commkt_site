@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState("home");
 
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
@@ -13,6 +14,46 @@ export default function Home() {
     }
   };
 
+  const handleWhatsApp = () => {
+    window.open('https://wa.me/5511999999999?text=Olá%20AUREA%20COMMKT%2C%20gostaria%20de%20saber%20mais%20sobre%20seus%20cursos%20e%20serviços.', '_blank');
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert('Obrigado! Entraremos em contato em breve.');
+  };
+
+  const cursos = [
+    {
+      id: 1,
+      title: "Copywriting Estratégico",
+      description: "Aprenda a arte de escrever para vender. Domine técnicas de persuasão e crie conteúdo que converte.",
+      price: "R$ 297",
+      duration: "4 semanas"
+    },
+    {
+      id: 2,
+      title: "Linguística Aplicada ao Marketing",
+      description: "Entenda como a linguagem influencia a decisão de compra. Técnicas avançadas de comunicação persuasiva.",
+      price: "R$ 397",
+      duration: "6 semanas"
+    },
+    {
+      id: 3,
+      title: "Oratória e Apresentações",
+      description: "Domine a arte de falar em público. Desenvolva confiança e impacto em suas apresentações.",
+      price: "R$ 347",
+      duration: "5 semanas"
+    },
+    {
+      id: 4,
+      title: "Marketing Digital Completo",
+      description: "Estratégia completa de marketing digital. Do planejamento à execução e análise de resultados.",
+      price: "R$ 497",
+      duration: "8 semanas"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Navigation */}
@@ -20,15 +61,15 @@ export default function Home() {
         <div className="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <img src="/logo-aurea.jpg" alt="AUREA Logo" className="h-8 md:h-10 w-auto rounded-lg" />
-            <div className="text-lg md:text-2xl font-bold text-amber-600">AUREA</div>
+            <div className="text-lg md:text-2xl font-bold text-amber-700">AUREA</div>
           </div>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex gap-8">
-            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-amber-600 transition font-medium">Home</button>
-            <button onClick={() => scrollToSection('cursos')} className="text-gray-700 hover:text-amber-600 transition font-medium">Cursos</button>
-            <button onClick={() => scrollToSection('servicos')} className="text-gray-700 hover:text-amber-600 transition font-medium">Serviços</button>
-            <button onClick={() => scrollToSection('contato')} className="text-gray-700 hover:text-amber-600 transition font-medium">Contato</button>
+            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-amber-700 transition font-medium">Home</button>
+            <button onClick={() => scrollToSection('cursos')} className="text-gray-700 hover:text-amber-700 transition font-medium">Cursos</button>
+            <button onClick={() => scrollToSection('servicos')} className="text-gray-700 hover:text-amber-700 transition font-medium">Serviços</button>
+            <button onClick={() => scrollToSection('contato')} className="text-gray-700 hover:text-amber-700 transition font-medium">Contato</button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -44,10 +85,10 @@ export default function Home() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-200 py-4">
             <div className="container mx-auto px-4 flex flex-col gap-4">
-              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-amber-600 transition font-medium text-left">Home</button>
-              <button onClick={() => scrollToSection('cursos')} className="text-gray-700 hover:text-amber-600 transition font-medium text-left">Cursos</button>
-              <button onClick={() => scrollToSection('servicos')} className="text-gray-700 hover:text-amber-600 transition font-medium text-left">Serviços</button>
-              <button onClick={() => scrollToSection('contato')} className="text-gray-700 hover:text-amber-600 transition font-medium text-left">Contato</button>
+              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Home</button>
+              <button onClick={() => scrollToSection('cursos')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Cursos</button>
+              <button onClick={() => scrollToSection('servicos')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Serviços</button>
+              <button onClick={() => scrollToSection('contato')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Contato</button>
             </div>
           </div>
         )}
@@ -68,19 +109,25 @@ export default function Home() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight animate-fade-in">
               AUREA COMUNICAÇÃO E MARKETING
             </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-gray-100 mb-6 md:mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-100 mb-6 md:mb-8 leading-relaxed animate-slide-up animation-delay-1000">
               Transforme sua experiência em resultados: Linguística, Comunicação e Marketing com a excelência de quem ensina.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 animate-slide-up animation-delay-2000">
               <Button 
-                className="bg-amber-500 hover:bg-amber-600 text-white px-6 md:px-8 py-2 md:py-3 text-base md:text-lg rounded-lg transition w-full sm:w-auto"
+                className="bg-amber-600 hover:bg-amber-700 text-white px-6 md:px-8 py-2 md:py-3 text-base md:text-lg rounded-lg transition"
                 onClick={() => scrollToSection('cursos')}
               >
                 Descubra Nossos Cursos e Serviços
                 <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button 
+                className="bg-white/20 hover:bg-white/30 text-white px-6 md:px-8 py-2 md:py-3 text-base md:text-lg rounded-lg transition border border-white"
+                onClick={handleWhatsApp}
+              >
+                Fale Conosco via WhatsApp
               </Button>
             </div>
           </div>
@@ -99,8 +146,8 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {/* Diferencial 1 */}
-            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-500 hover:shadow-lg transition">
-              <div className="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center mb-4">
+            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
+              <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-white text-xl font-bold">✓</span>
               </div>
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Experiência Comprovada</h3>
@@ -110,8 +157,8 @@ export default function Home() {
             </div>
 
             {/* Diferencial 2 */}
-            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-500 hover:shadow-lg transition">
-              <div className="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center mb-4">
+            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
+              <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-white text-xl font-bold">✓</span>
               </div>
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Excelência Pedagógica</h3>
@@ -121,8 +168,8 @@ export default function Home() {
             </div>
 
             {/* Diferencial 3 */}
-            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-500 hover:shadow-lg transition">
-              <div className="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center mb-4">
+            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
+              <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-white text-xl font-bold">✓</span>
               </div>
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Resultados Tangíveis</h3>
@@ -134,87 +181,167 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ofertas Section */}
+      {/* Cursos Section */}
       <section id="cursos" className="py-12 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 md:mb-4 text-gray-900">
-            Soluções AUREA: Comunicação, Linguística e Mercado
+            Cursos Especializados
           </h2>
           <p className="text-center text-gray-700 text-base md:text-lg mb-8 md:mb-16 max-w-2xl mx-auto">
-            Escolha entre nossos cursos especializados ou serviços de consultoria personalizados.
+            Escolha entre nossos cursos especializados e invista no seu conhecimento.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6 md:gap-12">
-            {/* Cursos */}
-            <div className="bg-white p-6 md:p-10 rounded-2xl shadow-md border border-gray-200">
-              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Cursos Técnicos e Complementares</h3>
-              <p className="text-gray-700 text-sm md:text-base mb-8">
-                Invista no seu conhecimento com nossos cursos especializados. Aprenda as técnicas mais atuais de comunicação e linguística aplicadas ao mercado.
-              </p>
-
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-bold text-gray-900 text-sm md:text-base">Copywriting Estratégico</h4>
-                    <p className="text-gray-600 text-xs md:text-sm">A arte de escrever para vender</p>
-                  </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {cursos.map((curso, idx) => (
+              <div key={curso.id} className="bg-white p-6 rounded-2xl shadow-md border border-gray-200 hover:border-amber-600 hover:shadow-lg transition animate-slide-up" style={{ animationDelay: `${idx * 0.15}s` }}>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{curso.title}</h3>
+                <p className="text-gray-700 text-sm mb-4">{curso.description}</p>
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-2xl font-bold text-amber-600">{curso.price}</span>
+                  <span className="text-xs text-gray-600">{curso.duration}</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-bold text-gray-900 text-sm md:text-base">Linguística Aplicada ao Marketing</h4>
-                    <p className="text-gray-600 text-xs md:text-sm">Entenda como a linguagem influencia a decisão de compra</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-bold text-gray-900 text-sm md:text-base">Oratória e Apresentações de Alto Impacto</h4>
-                    <p className="text-gray-600 text-xs md:text-sm">Domine a arte de falar em público</p>
-                  </div>
-                </div>
+                <Button 
+                  className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm"
+                  onClick={handleWhatsApp}
+                >
+                  Inscrever-se
+                </Button>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <Button className="w-full bg-amber-500 hover:bg-amber-600 text-white py-2 md:py-3 rounded-lg transition text-sm md:text-base">
-                Ver Catálogo Completo de Cursos
+      {/* Serviços Section */}
+      <section id="servicos" className="py-12 md:py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 md:mb-4 text-gray-900">
+            Serviços de Consultoria e Marketing
+          </h2>
+          <p className="text-center text-gray-700 text-base md:text-lg mb-8 md:mb-16 max-w-2xl mx-auto">
+            Sua comunicação e marketing nas mãos de especialistas.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Consultoria de Marketing Digital</h3>
+              <p className="text-gray-700 text-sm md:text-base mb-4">
+                Estratégia completa para presença online. Análise de mercado, posicionamento de marca e plano de ação.
+              </p>
+              <Button 
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm"
+                onClick={handleWhatsApp}
+              >
+                Solicitar Orçamento
               </Button>
             </div>
 
-            {/* Serviços */}
-            <div id="servicos" className="bg-white p-6 md:p-10 rounded-2xl shadow-md border border-gray-200">
-              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Serviços de Consultoria e Marketing</h3>
-              <p className="text-gray-700 text-sm md:text-base mb-8">
-                Sua comunicação e marketing nas mãos de especialistas. Desenvolvemos estratégias personalizadas para posicionar sua marca e atrair seus clientes ideais.
+            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Criação de Conteúdo (SEO)</h3>
+              <p className="text-gray-700 text-sm md:text-base mb-4">
+                Textos otimizados que educam e vendem. Blog posts, landing pages e conteúdo para redes sociais.
               </p>
+              <Button 
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm"
+                onClick={handleWhatsApp}
+              >
+                Solicitar Orçamento
+              </Button>
+            </div>
 
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>
+            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Revisão e Edição Profissional</h3>
+              <p className="text-gray-700 text-sm md:text-base mb-4">
+                Garanta a excelência linguística em todos os seus materiais. Revisão completa e edição criativa.
+              </p>
+              <Button 
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm"
+                onClick={handleWhatsApp}
+              >
+                Solicitar Orçamento
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contato Section */}
+      <section id="contato" className="py-12 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 md:mb-4 text-gray-900">
+            Entre em Contato
+          </h2>
+          <p className="text-center text-gray-700 text-base md:text-lg mb-8 md:mb-12 max-w-2xl mx-auto">
+            Pronto para elevar sua comunicação ao nível AUREA? Fale conosco agora!
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Formulário */}
+            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-md border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Formulário de Contato</h3>
+              <form onSubmit={handleFormSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Nome</label>
+                  <input type="text" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">E-mail</label>
+                  <input type="email" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Telefone</label>
+                  <input type="tel" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Mensagem</label>
+                  <textarea required rows={4} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600"></textarea>
+                </div>
+                <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg transition">
+                  Enviar Mensagem
+                </Button>
+              </form>
+            </div>
+
+            {/* Informações de Contato */}
+            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-md border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Informações de Contato</h3>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <Mail className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-bold text-gray-900 text-sm md:text-base">Consultoria de Marketing Digital</h4>
-                    <p className="text-gray-600 text-xs md:text-sm">Estratégia completa para presença online</p>
+                    <h4 className="font-bold text-gray-900">E-mail</h4>
+                    <p className="text-gray-700">aureacommkt@gmail.com</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>
+                <div className="flex items-start gap-4">
+                  <Phone className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-bold text-gray-900 text-sm md:text-base">Criação de Conteúdo Otimizado (SEO)</h4>
-                    <p className="text-gray-600 text-xs md:text-sm">Textos que educam e vendem</p>
+                    <h4 className="font-bold text-gray-900">WhatsApp</h4>
+                    <button onClick={handleWhatsApp} className="text-amber-600 hover:text-amber-700 transition">(11) 9999-9999</button>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>
+                <div className="flex items-start gap-4">
+                  <MapPin className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-bold text-gray-900 text-sm md:text-base">Revisão e Edição Profissional</h4>
-                    <p className="text-gray-600 text-xs md:text-sm">Garanta a excelência linguística em todos os seus materiais</p>
+                    <h4 className="font-bold text-gray-900">Localização</h4>
+                    <p className="text-gray-700">São Paulo, SP</p>
+                  </div>
+                </div>
+                <div className="pt-4 border-t border-gray-200">
+                  <h4 className="font-bold text-gray-900 mb-3">Redes Sociais</h4>
+                  <div className="flex gap-4">
+                    <a href="#" className="text-gray-400 hover:text-amber-600 transition">
+                      <Instagram className="w-6 h-6" />
+                    </a>
+                    <a href="#" className="text-gray-400 hover:text-amber-600 transition">
+                      <Linkedin className="w-6 h-6" />
+                    </a>
+                    <a href="#" className="text-gray-400 hover:text-amber-600 transition">
+                      <Facebook className="w-6 h-6" />
+                    </a>
                   </div>
                 </div>
               </div>
-
-              <Button className="w-full bg-amber-500 hover:bg-amber-600 text-white py-2 md:py-3 rounded-lg transition text-sm md:text-base">
-                Solicitar Orçamento Personalizado
-              </Button>
             </div>
           </div>
         </div>
@@ -224,25 +351,32 @@ export default function Home() {
       <section className="py-12 md:py-20 bg-gradient-to-r from-teal-700 to-teal-800 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">
-            Pronto para Elevar Sua Comunicação ao Nível AUREA?
+            Pronto para Transformar Sua Comunicação?
           </h2>
           <p className="text-base md:text-xl text-gray-100 mb-6 md:mb-8 max-w-2xl mx-auto">
             Não perca mais tempo com estratégias que não funcionam. Fale com quem entende de linguagem e mercado.
           </p>
-          <Button 
-            className="bg-amber-500 hover:bg-amber-600 text-white px-6 md:px-10 py-2 md:py-4 text-base md:text-lg rounded-lg transition"
-            onClick={() => scrollToSection('contato')}
-          >
-            Fale Conosco Agora
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              className="bg-amber-600 hover:bg-amber-700 text-white px-6 md:px-10 py-2 md:py-4 text-base md:text-lg rounded-lg transition"
+              onClick={() => scrollToSection('contato')}
+            >
+              Fale Conosco
+            </Button>
+            <Button 
+              className="bg-white/20 hover:bg-white/30 text-white px-6 md:px-10 py-2 md:py-4 text-base md:text-lg rounded-lg transition border border-white"
+              onClick={handleWhatsApp}
+            >
+              WhatsApp
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer id="contato" className="bg-gray-900 text-gray-300 py-12 md:py-16">
+      <footer className="bg-gray-900 text-gray-300 py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
-            {/* Sobre */}
             <div>
               <h3 className="text-white font-bold text-lg mb-4">AUREA COMMKT</h3>
               <p className="text-sm">
@@ -250,60 +384,56 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Links Rápidos */}
             <div>
               <h4 className="text-white font-bold mb-4">Links Rápidos</h4>
               <ul className="space-y-2 text-sm">
-                <li><button onClick={() => scrollToSection('home')} className="hover:text-amber-500 transition">Home</button></li>
-                <li><button onClick={() => scrollToSection('cursos')} className="hover:text-amber-500 transition">Cursos</button></li>
-                <li><button onClick={() => scrollToSection('servicos')} className="hover:text-amber-500 transition">Serviços</button></li>
-                <li><button onClick={() => scrollToSection('contato')} className="hover:text-amber-500 transition">Contato</button></li>
+                <li><button onClick={() => scrollToSection('home')} className="hover:text-amber-600 transition">Home</button></li>
+                <li><button onClick={() => scrollToSection('cursos')} className="hover:text-amber-600 transition">Cursos</button></li>
+                <li><button onClick={() => scrollToSection('servicos')} className="hover:text-amber-600 transition">Serviços</button></li>
+                <li><button onClick={() => scrollToSection('contato')} className="hover:text-amber-600 transition">Contato</button></li>
               </ul>
             </div>
 
-            {/* Contato */}
             <div>
               <h4 className="text-white font-bold mb-4">Contato</h4>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-amber-500 flex-shrink-0" />
+                  <Mail className="w-4 h-4 text-amber-600 flex-shrink-0" />
                   <span>aureacommkt@gmail.com</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-amber-500 flex-shrink-0" />
+                  <Phone className="w-4 h-4 text-amber-600 flex-shrink-0" />
                   <span>(11) 9999-9999</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-amber-500 flex-shrink-0" />
+                  <MapPin className="w-4 h-4 text-amber-600 flex-shrink-0" />
                   <span>São Paulo, SP</span>
                 </li>
               </ul>
             </div>
 
-            {/* Redes Sociais */}
             <div>
               <h4 className="text-white font-bold mb-4">Redes Sociais</h4>
               <div className="flex gap-4">
-                <a href="#" className="text-gray-400 hover:text-amber-500 transition">
+                <a href="#" className="text-gray-400 hover:text-amber-600 transition">
                   <Instagram className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-amber-500 transition">
+                <a href="#" className="text-gray-400 hover:text-amber-600 transition">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-amber-500 transition">
+                <a href="#" className="text-gray-400 hover:text-amber-600 transition">
                   <Facebook className="w-5 h-5" />
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Divider */}
           <div className="border-t border-gray-800 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center text-sm gap-4">
               <p>&copy; 2025 AUREA COMMKT. Todos os direitos reservados.</p>
               <div className="flex gap-6">
-                <a href="#" className="hover:text-amber-500 transition">Política de Privacidade</a>
-                <a href="#" className="hover:text-amber-500 transition">Termos de Uso</a>
+                <a href="#" className="hover:text-amber-600 transition">Política de Privacidade</a>
+                <a href="#" className="hover:text-amber-600 transition">Termos de Uso</a>
               </div>
             </div>
           </div>

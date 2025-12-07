@@ -43,13 +43,13 @@
 }
 
 :root {
-  --primary: #D4AF37;
+  --primary: #C9A961;
   --primary-foreground: #FFFFFF;
-  --sidebar-primary: #D4AF37;
+  --sidebar-primary: #C9A961;
   --sidebar-primary-foreground: #FFFFFF;
-  --chart-1: #E8C547;
-  --chart-2: #D4AF37;
-  --chart-3: #B8941F;
+  --chart-1: #E8D5B7;
+  --chart-2: #C9A961;
+  --chart-3: #A68A3E;
   --chart-4: #2A7A8E;
   --chart-5: #1F5A6E;
   --radius: 0.65rem;
@@ -63,19 +63,19 @@
   --secondary-foreground: #333333;
   --muted: #E8E8E8;
   --muted-foreground: #666666;
-  --accent: #D4AF37;
+  --accent: #C9A961;
   --accent-foreground: #FFFFFF;
   --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
   --border: #E0E0E0;
   --input: #F5F5F5;
-  --ring: #D4AF37;
+  --ring: #C9A961;
   --sidebar: #FFFFFF;
   --sidebar-foreground: #1A1A1A;
-  --sidebar-accent: #D4AF37;
+  --sidebar-accent: #C9A961;
   --sidebar-accent-foreground: #FFFFFF;
   --sidebar-border: #E0E0E0;
-  --sidebar-ring: #D4AF37;
+  --sidebar-ring: #C9A961;
 }
 
 .dark {
@@ -184,12 +184,48 @@
     }
   }
 
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .animate-blob {
     animation: blob 7s infinite;
   }
 
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 0.3s;
+  }
+
   .animation-delay-2000 {
-    animation-delay: 2s;
+    animation-delay: 0.6s;
+  }
+
+  .animation-delay-3000 {
+    animation-delay: 0.9s;
   }
 
   @media (min-width: 640px) {
