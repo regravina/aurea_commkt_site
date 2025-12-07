@@ -54,20 +54,17 @@ export default function Home() {
       </nav>
 
       {/* Hero Section with Banner */}
-      <section id="home" className="relative bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 text-white py-12 md:py-24 overflow-hidden min-h-screen flex items-center">
-        {/* Background Image Overlay */}
-        <div 
-          className="absolute inset-0 opacity-40"
-          style={{
-            backgroundImage: 'url(/banner-aurea.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        ></div>
+      <section id="home" className="relative text-white py-12 md:py-24 overflow-hidden min-h-screen flex items-center" style={{
+        backgroundImage: 'url(/banner-aurea.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/30"></div>
 
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
