@@ -1,10 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook, ArrowRight, Menu, X } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook, ArrowRight, Menu, X, Download } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState("home");
 
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
@@ -26,31 +25,48 @@ export default function Home() {
   const cursos = [
     {
       id: 1,
-      title: "Copywriting Estratégico",
-      description: "Aprenda a arte de escrever para vender. Domine técnicas de persuasão e crie conteúdo que converte.",
-      price: "R$ 297",
-      duration: "4 semanas"
-    },
-    {
-      id: 2,
-      title: "Linguística Aplicada ao Marketing",
-      description: "Entenda como a linguagem influencia a decisão de compra. Técnicas avançadas de comunicação persuasiva.",
-      price: "R$ 397",
-      duration: "6 semanas"
-    },
-    {
-      id: 3,
       title: "Oratória e Apresentações",
       description: "Domine a arte de falar em público. Desenvolva confiança e impacto em suas apresentações.",
-      price: "R$ 347",
+      image: "/oratória1.JPG",
       duration: "5 semanas"
     },
     {
-      id: 4,
-      title: "Marketing Digital Completo",
-      description: "Estratégia completa de marketing digital. Do planejamento à execução e análise de resultados.",
-      price: "R$ 497",
-      duration: "8 semanas"
+      id: 2,
+      title: "Linguística Aplicada ao Marketing - Parte 01",
+      description: "Fundamentos da escrita. Aprenda as bases da linguagem, gramática aplicada e técnicas de redação clara e persuasiva.",
+      image: "/curso-linguistica-parte1.png",
+      duration: "4 semanas"
+    },
+    {
+      id: 3,
+      title: "Linguística Aplicada ao Marketing - Parte 02",
+      description: "Produção de textos de marketing e vendas. Crie conteúdo que converte e gera resultados reais para seu negócio.",
+      image: "/curso-linguistica-parte2.png",
+      duration: "6 semanas"
+    }
+  ];
+
+  const ebooks = [
+    {
+      id: 1,
+      title: "Comunicação Persuasiva",
+      description: "Descubra os segredos da comunicação que influencia decisões. Técnicas práticas e estratégias comprovadas.",
+      image: "/ebook-comunicacao-persuasiva.png",
+      price: "R$ 47"
+    },
+    {
+      id: 2,
+      title: "Estratégia de Conteúdo",
+      description: "Planeje e execute uma estratégia de conteúdo que atrai, engaja e converte seu público-alvo.",
+      image: "/ebook-estrategia-conteudo.png",
+      price: "R$ 57"
+    },
+    {
+      id: 3,
+      title: "Branding Linguístico",
+      description: "Use a linguagem como ferramenta estratégica para construir uma marca memorável e diferenciada.",
+      image: "/ebook-branding-linguistico.png",
+      price: "R$ 67"
     }
   ];
 
@@ -68,6 +84,7 @@ export default function Home() {
           <div className="hidden md:flex gap-8">
             <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-amber-700 transition font-medium">Home</button>
             <button onClick={() => scrollToSection('cursos')} className="text-gray-700 hover:text-amber-700 transition font-medium">Cursos</button>
+            <button onClick={() => scrollToSection('ebooks')} className="text-gray-700 hover:text-amber-700 transition font-medium">E-books</button>
             <button onClick={() => scrollToSection('servicos')} className="text-gray-700 hover:text-amber-700 transition font-medium">Serviços</button>
             <button onClick={() => scrollToSection('contato')} className="text-gray-700 hover:text-amber-700 transition font-medium">Contato</button>
           </div>
@@ -87,6 +104,7 @@ export default function Home() {
             <div className="container mx-auto px-4 flex flex-col gap-4">
               <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Home</button>
               <button onClick={() => scrollToSection('cursos')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Cursos</button>
+              <button onClick={() => scrollToSection('ebooks')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">E-books</button>
               <button onClick={() => scrollToSection('servicos')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Serviços</button>
               <button onClick={() => scrollToSection('contato')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Contato</button>
             </div>
@@ -120,7 +138,7 @@ export default function Home() {
                 className="bg-amber-600 hover:bg-amber-700 text-white px-6 md:px-8 py-2 md:py-3 text-base md:text-lg rounded-lg transition"
                 onClick={() => scrollToSection('cursos')}
               >
-                Descubra Nossos Cursos e Serviços
+                Descubra Nossos Cursos
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button 
@@ -191,21 +209,75 @@ export default function Home() {
             Escolha entre nossos cursos especializados e invista no seu conhecimento.
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {cursos.map((curso, idx) => (
-              <div key={curso.id} className="bg-white p-6 rounded-2xl shadow-md border border-gray-200 hover:border-amber-600 hover:shadow-lg transition animate-slide-up" style={{ animationDelay: `${idx * 0.15}s` }}>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{curso.title}</h3>
-                <p className="text-gray-700 text-sm mb-4">{curso.description}</p>
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-2xl font-bold text-amber-600">{curso.price}</span>
-                  <span className="text-xs text-gray-600">{curso.duration}</span>
+              <div key={curso.id} className="bg-white rounded-2xl shadow-md border border-gray-200 hover:border-amber-600 hover:shadow-lg transition overflow-hidden animate-slide-up" style={{ animationDelay: `${idx * 0.15}s` }}>
+                {/* Course Image */}
+                <div className="h-48 md:h-56 overflow-hidden bg-gray-200">
+                  <img 
+                    src={curso.image} 
+                    alt={curso.title}
+                    className="w-full h-full object-cover hover:scale-105 transition duration-300"
+                  />
                 </div>
-                <Button 
-                  className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm"
-                  onClick={handleWhatsApp}
-                >
-                  Inscrever-se
-                </Button>
+                
+                {/* Course Content */}
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-gray-900 mb-3">{curso.title}</h3>
+                  <p className="text-gray-700 text-sm mb-4">{curso.description}</p>
+                  <div className="flex justify-between items-center mb-4">
+                    <span className="text-xs text-gray-600 font-medium">{curso.duration}</span>
+                  </div>
+                  <Button 
+                    className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm"
+                    onClick={handleWhatsApp}
+                  >
+                    Saiba Mais
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* E-books Section */}
+      <section id="ebooks" className="py-12 md:py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 md:mb-4 text-gray-900">
+            E-books Exclusivos
+          </h2>
+          <p className="text-center text-gray-700 text-base md:text-lg mb-8 md:mb-16 max-w-2xl mx-auto">
+            Aprofunde seus conhecimentos com nossos e-books especializados em comunicação e marketing.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {ebooks.map((ebook, idx) => (
+              <div key={ebook.id} className="bg-gray-50 rounded-2xl shadow-md border border-gray-200 hover:border-amber-600 hover:shadow-lg transition overflow-hidden animate-slide-up" style={{ animationDelay: `${idx * 0.15}s` }}>
+                {/* E-book Cover Image */}
+                <div className="h-64 md:h-72 overflow-hidden bg-gray-200">
+                  <img 
+                    src={ebook.image} 
+                    alt={ebook.title}
+                    className="w-full h-full object-cover hover:scale-105 transition duration-300"
+                  />
+                </div>
+                
+                {/* E-book Content */}
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-gray-900 mb-3">{ebook.title}</h3>
+                  <p className="text-gray-700 text-sm mb-4">{ebook.description}</p>
+                  <div className="flex justify-between items-center mb-4">
+                    <span className="text-2xl font-bold text-amber-600">{ebook.price}</span>
+                  </div>
+                  <Button 
+                    className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm flex items-center justify-center gap-2"
+                    onClick={handleWhatsApp}
+                  >
+                    <Download className="w-4 h-4" />
+                    Adquirir E-book
+                  </Button>
+                </div>
               </div>
             ))}
           </div>
@@ -213,7 +285,7 @@ export default function Home() {
       </section>
 
       {/* Serviços Section */}
-      <section id="servicos" className="py-12 md:py-20 bg-white">
+      <section id="servicos" className="py-12 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 md:mb-4 text-gray-900">
             Serviços de Consultoria e Marketing
@@ -223,7 +295,7 @@ export default function Home() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Consultoria de Marketing Digital</h3>
               <p className="text-gray-700 text-sm md:text-base mb-4">
                 Estratégia completa para presença online. Análise de mercado, posicionamento de marca e plano de ação.
@@ -236,7 +308,7 @@ export default function Home() {
               </Button>
             </div>
 
-            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Criação de Conteúdo (SEO)</h3>
               <p className="text-gray-700 text-sm md:text-base mb-4">
                 Textos otimizados que educam e vendem. Blog posts, landing pages e conteúdo para redes sociais.
@@ -249,7 +321,7 @@ export default function Home() {
               </Button>
             </div>
 
-            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Revisão e Edição Profissional</h3>
               <p className="text-gray-700 text-sm md:text-base mb-4">
                 Garanta a excelência linguística em todos os seus materiais. Revisão completa e edição criativa.
@@ -266,7 +338,7 @@ export default function Home() {
       </section>
 
       {/* Contato Section */}
-      <section id="contato" className="py-12 md:py-20 bg-gray-50">
+      <section id="contato" className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 md:mb-4 text-gray-900">
             Entre em Contato
@@ -277,7 +349,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Formulário */}
-            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-md border border-gray-200">
+            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl shadow-md border border-gray-200">
               <h3 className="text-xl font-bold text-gray-900 mb-6">Formulário de Contato</h3>
               <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div>
@@ -303,7 +375,7 @@ export default function Home() {
             </div>
 
             {/* Informações de Contato */}
-            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-md border border-gray-200">
+            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl shadow-md border border-gray-200">
               <h3 className="text-xl font-bold text-gray-900 mb-6">Informações de Contato</h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -327,7 +399,7 @@ export default function Home() {
                     <p className="text-gray-700">São Paulo, SP</p>
                   </div>
                 </div>
-                <div className="pt-4 border-t border-gray-200">
+                <div className="pt-4 border-t border-gray-300">
                   <h4 className="font-bold text-gray-900 mb-3">Redes Sociais</h4>
                   <div className="flex gap-4">
                     <a href="#" className="text-gray-400 hover:text-amber-600 transition">
@@ -389,6 +461,7 @@ export default function Home() {
               <ul className="space-y-2 text-sm">
                 <li><button onClick={() => scrollToSection('home')} className="hover:text-amber-600 transition">Home</button></li>
                 <li><button onClick={() => scrollToSection('cursos')} className="hover:text-amber-600 transition">Cursos</button></li>
+                <li><button onClick={() => scrollToSection('ebooks')} className="hover:text-amber-600 transition">E-books</button></li>
                 <li><button onClick={() => scrollToSection('servicos')} className="hover:text-amber-600 transition">Serviços</button></li>
                 <li><button onClick={() => scrollToSection('contato')} className="hover:text-amber-600 transition">Contato</button></li>
               </ul>
