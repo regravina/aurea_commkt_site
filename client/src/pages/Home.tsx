@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook, ArrowRight, Menu, X, Download } from "lucide-react";
 import { useState } from "react";
+import { useLocation } from "wouter";
 
 export default function Home() {
+  const [, navigate] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
@@ -51,21 +53,21 @@ export default function Home() {
       id: 1,
       title: "Comunicação Persuasiva",
       description: "Descubra os segredos da comunicação que influencia decisões. Técnicas práticas e estratégias comprovadas.",
-      image: "/ebook-comunicacao-persuasiva.png",
+      image: "/ebook-comunicacao-persuasiva-v2.png",
       price: "R$ 47"
     },
     {
       id: 2,
       title: "Estratégia de Conteúdo",
       description: "Planeje e execute uma estratégia de conteúdo que atrai, engaja e converte seu público-alvo.",
-      image: "/ebook-estrategia-conteudo.png",
+      image: "/ebook-estrategia-conteudo-v2.png",
       price: "R$ 57"
     },
     {
       id: 3,
       title: "Branding Linguístico",
       description: "Use a linguagem como ferramenta estratégica para construir uma marca memorável e diferenciada.",
-      image: "/ebook-branding-linguistico.png",
+      image: "/ebook-branding-linguistico-v2.png",
       price: "R$ 67"
     }
   ];
@@ -85,7 +87,10 @@ export default function Home() {
             <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-amber-700 transition font-medium">Home</button>
             <button onClick={() => scrollToSection('cursos')} className="text-gray-700 hover:text-amber-700 transition font-medium">Cursos</button>
             <button onClick={() => scrollToSection('ebooks')} className="text-gray-700 hover:text-amber-700 transition font-medium">E-books</button>
-            <button onClick={() => scrollToSection('servicos')} className="text-gray-700 hover:text-amber-700 transition font-medium">Serviços</button>
+            <button onClick={() => navigate('/produtos')} className="text-gray-700 hover:text-amber-700 transition font-medium">Produtos</button>
+            <button onClick={() => navigate('/blog')} className="text-gray-700 hover:text-amber-700 transition font-medium">Blog</button>
+            <button onClick={() => navigate('/sobre')} className="text-gray-700 hover:text-amber-700 transition font-medium">Sobre</button>
+            <button onClick={() => navigate('/faq')} className="text-gray-700 hover:text-amber-700 transition font-medium">FAQ</button>
             <button onClick={() => scrollToSection('contato')} className="text-gray-700 hover:text-amber-700 transition font-medium">Contato</button>
           </div>
 
@@ -105,7 +110,10 @@ export default function Home() {
               <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Home</button>
               <button onClick={() => scrollToSection('cursos')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Cursos</button>
               <button onClick={() => scrollToSection('ebooks')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">E-books</button>
-              <button onClick={() => scrollToSection('servicos')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Serviços</button>
+              <button onClick={() => navigate('/produtos')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Produtos</button>
+              <button onClick={() => navigate('/blog')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Blog</button>
+              <button onClick={() => navigate('/sobre')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Sobre</button>
+              <button onClick={() => navigate('/faq')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">FAQ</button>
               <button onClick={() => scrollToSection('contato')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Contato</button>
             </div>
           </div>
