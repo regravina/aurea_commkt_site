@@ -107,19 +107,19 @@ export default function Home() {
         <div className="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <img src="/logo-aurea.jpg" alt="AUREA Logo" className="h-8 md:h-10 w-auto rounded-lg" />
-            <div className="text-lg md:text-2xl font-bold text-amber-700">AUREA</div>
+            <div className="text-lg md:text-2xl font-bold " style={{ color: "#D4AF37" }}>AUREA</div>
           </div>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex gap-8">
-            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-amber-700 transition font-medium">Home</button>
-            <button onClick={() => scrollToSection('cursos')} className="text-gray-700 hover:text-amber-700 transition font-medium">Cursos</button>
-            <button onClick={() => scrollToSection('ebooks')} className="text-gray-700 hover:text-amber-700 transition font-medium">E-books</button>
-            <button onClick={() => navigate('/produtos')} className="text-gray-700 hover:text-amber-700 transition font-medium">Produtos</button>
-            <button onClick={() => navigate('/blog')} className="text-gray-700 hover:text-amber-700 transition font-medium">Blog</button>
-            <button onClick={() => navigate('/sobre')} className="text-gray-700 hover:text-amber-700 transition font-medium">Sobre</button>
-            <button onClick={() => navigate('/faq')} className="text-gray-700 hover:text-amber-700 transition font-medium">FAQ</button>
-            <button onClick={() => scrollToSection('contato')} className="text-gray-700 hover:text-amber-700 transition font-medium">Contato</button>
+            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover: transition font-medium" style={{ color: "#D4AF37" }}>Home</button>
+            <button onClick={() => scrollToSection('cursos')} className="text-gray-700 hover: transition font-medium" style={{ color: "#D4AF37" }}>Cursos</button>
+            <button onClick={() => scrollToSection('ebooks')} className="text-gray-700 hover: transition font-medium" style={{ color: "#D4AF37" }}>E-books</button>
+            <button onClick={() => navigate('/produtos')} className="text-gray-700 hover: transition font-medium" style={{ color: "#D4AF37" }}>Produtos</button>
+            <button onClick={() => navigate('/blog')} className="text-gray-700 hover: transition font-medium" style={{ color: "#D4AF37" }}>Blog</button>
+            <button onClick={() => navigate('/sobre')} className="text-gray-700 hover: transition font-medium" style={{ color: "#D4AF37" }}>Sobre</button>
+            <button onClick={() => navigate('/faq')} className="text-gray-700 hover: transition font-medium" style={{ color: "#D4AF37" }}>FAQ</button>
+            <button onClick={() => scrollToSection('contato')} className="text-gray-700 hover: transition font-medium" style={{ color: "#D4AF37" }}>Contato</button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -135,14 +135,14 @@ export default function Home() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-200 py-4">
             <div className="container mx-auto px-4 flex flex-col gap-4">
-              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Home</button>
-              <button onClick={() => scrollToSection('cursos')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Cursos</button>
-              <button onClick={() => scrollToSection('ebooks')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">E-books</button>
-              <button onClick={() => navigate('/produtos')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Produtos</button>
-              <button onClick={() => navigate('/blog')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Blog</button>
-              <button onClick={() => navigate('/sobre')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Sobre</button>
-              <button onClick={() => navigate('/faq')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">FAQ</button>
-              <button onClick={() => scrollToSection('contato')} className="text-gray-700 hover:text-amber-700 transition font-medium text-left">Contato</button>
+              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover: transition font-medium text-left" style={{ color: "#D4AF37" }}>Home</button>
+              <button onClick={() => scrollToSection('cursos')} className="text-gray-700 hover: transition font-medium text-left" style={{ color: "#D4AF37" }}>Cursos</button>
+              <button onClick={() => scrollToSection('ebooks')} className="text-gray-700 hover: transition font-medium text-left" style={{ color: "#D4AF37" }}>E-books</button>
+              <button onClick={() => navigate('/produtos')} className="text-gray-700 hover: transition font-medium text-left" style={{ color: "#D4AF37" }}>Produtos</button>
+              <button onClick={() => navigate('/blog')} className="text-gray-700 hover: transition font-medium text-left" style={{ color: "#D4AF37" }}>Blog</button>
+              <button onClick={() => navigate('/sobre')} className="text-gray-700 hover: transition font-medium text-left" style={{ color: "#D4AF37" }}>Sobre</button>
+              <button onClick={() => navigate('/faq')} className="text-gray-700 hover: transition font-medium text-left" style={{ color: "#D4AF37" }}>FAQ</button>
+              <button onClick={() => scrollToSection('contato')} className="text-gray-700 hover: transition font-medium text-left" style={{ color: "#D4AF37" }}>Contato</button>
             </div>
           </div>
         )}
@@ -250,7 +250,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {cursos.map((curso, idx) => (
-              <div key={curso.id} className="bg-white rounded-2xl shadow-md border border-gray-200 hover:border-amber-600 hover:shadow-lg transition overflow-hidden animate-slide-up" style={{ animationDelay: `${idx * 0.15}s` }}>
+              <div key={curso.id} className="bg-white rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition overflow-hidden animate-slide-up" style={{ borderColor: "#D4AF37", animationDelay: `${idx * 0.15}s` }}>
                 {/* Course Image */}
                 <div className="h-48 md:h-56 overflow-hidden bg-gray-200">
                   <img 
@@ -268,7 +268,7 @@ export default function Home() {
                     <span className="text-xs text-gray-600 font-medium">{curso.duration}</span>
                   </div>
                   <Button 
-                    className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm"
+                    className="w-full  hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm" style={{ backgroundColor: "#D4AF37" }}
                     onClick={handleWhatsApp}
                   >
                     Saiba Mais
@@ -294,7 +294,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {ebooks.map((ebook, idx) => (
-              <div key={ebook.id} className="bg-gray-50 rounded-2xl shadow-md border border-gray-200 hover:border-amber-600 hover:shadow-lg transition overflow-hidden animate-slide-up" style={{ animationDelay: `${idx * 0.15}s` }}>
+              <div key={ebook.id} className="bg-gray-50 rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition overflow-hidden animate-slide-up" style={{ borderColor: "#D4AF37", animationDelay: `${idx * 0.15}s` }}>
                 {/* E-book Cover Image */}
                 <div className="h-64 md:h-72 overflow-hidden bg-gray-200">
                   <img 
@@ -309,10 +309,10 @@ export default function Home() {
                   <h3 className="text-lg font-bold text-gray-900 mb-3">{ebook.title}</h3>
                   <p className="text-gray-700 text-sm mb-4">{ebook.description}</p>
                   <div className="flex justify-between items-center mb-4">
-                    <span className="text-2xl font-bold text-amber-600">{ebook.price}</span>
+                    <span className="text-2xl font-bold " style={{ color: "#D4AF37" }}>{ebook.price}</span>
                   </div>
                   <Button 
-                    className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm flex items-center justify-center gap-2"
+                    className="w-full  hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm flex items-center justify-center gap-2" style={{ backgroundColor: "#D4AF37" }}
                     onClick={handleWhatsApp}
                   >
                     <Download className="w-4 h-4" />
@@ -336,39 +336,39 @@ export default function Home() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover: hover:shadow-lg transition" style={{ borderColor: "#D4AF37" }}>
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Consultoria de Marketing Digital</h3>
               <p className="text-gray-700 text-sm md:text-base mb-4">
                 Estratégia completa para presença online. Análise de mercado, posicionamento de marca e plano de ação.
               </p>
               <Button 
-                className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm"
+                className="w-full  hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm" style={{ backgroundColor: "#D4AF37" }}
                 onClick={handleWhatsApp}
               >
                 Solicitar Orçamento
               </Button>
             </div>
 
-            <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover: hover:shadow-lg transition" style={{ borderColor: "#D4AF37" }}>
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Criação de Conteúdo (SEO)</h3>
               <p className="text-gray-700 text-sm md:text-base mb-4">
                 Textos otimizados que educam e vendem. Blog posts, landing pages e conteúdo para redes sociais.
               </p>
               <Button 
-                className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm"
+                className="w-full  hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm" style={{ backgroundColor: "#D4AF37" }}
                 onClick={handleWhatsApp}
               >
                 Solicitar Orçamento
               </Button>
             </div>
 
-            <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover: hover:shadow-lg transition" style={{ borderColor: "#D4AF37" }}>
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Revisão e Edição Profissional</h3>
               <p className="text-gray-700 text-sm md:text-base mb-4">
                 Garanta a excelência linguística em todos os seus materiais. Revisão completa e edição criativa.
               </p>
               <Button 
-                className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm"
+                className="w-full  hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm" style={{ backgroundColor: "#D4AF37" }}
                 onClick={handleWhatsApp}
               >
                 Solicitar Orçamento
@@ -395,21 +395,21 @@ export default function Home() {
               <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Nome</label>
-                  <input type="text" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" />
+                  <input type="text" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:" style={{ borderColor: "#D4AF37" }} />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">E-mail</label>
-                  <input type="email" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" />
+                  <input type="email" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:" style={{ borderColor: "#D4AF37" }} />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Telefone</label>
-                  <input type="tel" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600" />
+                  <input type="tel" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:" style={{ borderColor: "#D4AF37" }} />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Mensagem</label>
-                  <textarea required rows={4} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-600"></textarea>
+                  <textarea required rows={4} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:" style={{ borderColor: "#D4AF37" }}></textarea>
                 </div>
-                <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg transition">
+                <Button className="w-full  hover:bg-amber-700 text-white py-2 rounded-lg transition" style={{ backgroundColor: "#D4AF37" }}>
                   Enviar Mensagem
                 </Button>
               </form>
@@ -420,21 +420,21 @@ export default function Home() {
               <h3 className="text-xl font-bold text-gray-900 mb-6">Informações de Contato</h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <Mail className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
+                  <Mail className="w-6 h-6  flex-shrink-0 mt-1" style={{ color: "#D4AF37" }} />
                   <div>
                     <h4 className="font-bold text-gray-900">E-mail</h4>
                     <p className="text-gray-700">aureacommkt@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Phone className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
+                  <Phone className="w-6 h-6  flex-shrink-0 mt-1" style={{ color: "#D4AF37" }} />
                   <div>
                     <h4 className="font-bold text-gray-900">WhatsApp</h4>
-                    <button onClick={handleWhatsApp} className="text-amber-600 hover:text-amber-700 transition">(11) 9999-9999</button>
+                    <button onClick={handleWhatsApp} className="text-amber-600 hover: transition" style={{ color: "#D4AF37" }}>(11) 9999-9999</button>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <MapPin className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
+                  <MapPin className="w-6 h-6  flex-shrink-0 mt-1" style={{ color: "#D4AF37" }} />
                   <div>
                     <h4 className="font-bold text-gray-900">Localização</h4>
                     <p className="text-gray-700">São Paulo, SP</p>
@@ -443,13 +443,13 @@ export default function Home() {
                 <div className="pt-4 border-t border-gray-300">
                   <h4 className="font-bold text-gray-900 mb-3">Redes Sociais</h4>
                   <div className="flex gap-4">
-                    <a href="#" className="text-gray-400 hover:text-amber-600 transition">
+                    <a href="#" className="text-gray-400 hover: transition" style={{ color: "#D4AF37" }}>
                       <Instagram className="w-6 h-6" />
                     </a>
-                    <a href="#" className="text-gray-400 hover:text-amber-600 transition">
+                    <a href="#" className="text-gray-400 hover: transition" style={{ color: "#D4AF37" }}>
                       <Linkedin className="w-6 h-6" />
                     </a>
-                    <a href="#" className="text-gray-400 hover:text-amber-600 transition">
+                    <a href="#" className="text-gray-400 hover: transition" style={{ color: "#D4AF37" }}>
                       <Facebook className="w-6 h-6" />
                     </a>
                   </div>
@@ -471,7 +471,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              className="bg-amber-600 hover:bg-amber-700 text-white px-6 md:px-10 py-2 md:py-4 text-base md:text-lg rounded-lg transition"
+              className=" hover:bg-amber-700 text-white px-6 md:px-10 py-2 md:py-4 text-base md:text-lg rounded-lg transition" style={{ backgroundColor: "#D4AF37" }}
               onClick={() => scrollToSection('contato')}
             >
               Fale Conosco
@@ -487,12 +487,12 @@ export default function Home() {
       </section>
 
        {/* Newsletter Section */}
-      <section className="py-12 md:py-20 bg-gradient-to-r from-amber-600 to-amber-700">
+      <section className="py-12 md:py-20 bg-gradient-to-r from-yellow-600 to-yellow-700">
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Receba Dicas Exclusivas
           </h3>
-          <p className="text-amber-50 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-yellow-50 text-lg mb-8 max-w-2xl mx-auto">
             Inscreva-se na nossa newsletter e receba conteudo exclusivo sobre linguistica, comunicacao e marketing.
           </p>
           <form className="max-w-md mx-auto flex gap-2" onSubmit={(e) => { e.preventDefault(); alert('Obrigado por se inscrever!'); }}>
