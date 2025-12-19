@@ -155,7 +155,7 @@ export default function Home() {
         backgroundPosition: 'center',
       }}>
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
 
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
@@ -171,7 +171,10 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-slide-up animation-delay-2000">
               <Button 
-                className="bg-amber-600 hover:bg-amber-700 text-white px-6 md:px-8 py-2 md:py-3 text-base md:text-lg rounded-lg transition"
+                className="text-white px-6 md:px-8 py-2 md:py-3 text-base md:text-lg rounded-lg transition"
+                style={{ backgroundColor: '#D4AF37' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#C99E2E'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#D4AF37'}
                 onClick={() => scrollToSection('cursos')}
               >
                 Descubra Nossos Cursos
@@ -200,8 +203,8 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {/* Diferencial 1 */}
-            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
-              <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center mb-4">
+            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:shadow-lg transition" style={{ borderColor: '#D4AF37' }}>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#D4AF37' }}>
                 <span className="text-white text-xl font-bold">✓</span>
               </div>
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Experiência Comprovada</h3>
@@ -211,8 +214,8 @@ export default function Home() {
             </div>
 
             {/* Diferencial 2 */}
-            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
-              <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center mb-4">
+            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:shadow-lg transition" style={{ borderColor: '#D4AF37' }}>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#D4AF37' }}>
                 <span className="text-white text-xl font-bold">✓</span>
               </div>
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Excelência Pedagógica</h3>
@@ -222,8 +225,8 @@ export default function Home() {
             </div>
 
             {/* Diferencial 3 */}
-            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-amber-600 hover:shadow-lg transition">
-              <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center mb-4">
+            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 hover:shadow-lg transition" style={{ borderColor: '#D4AF37' }}>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#D4AF37' }}>
                 <span className="text-white text-xl font-bold">✓</span>
               </div>
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Resultados Tangíveis</h3>
@@ -496,10 +499,10 @@ export default function Home() {
             <input
               type="email"
               placeholder="Seu e-mail"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-amber-300"
+              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-300"
               required
             />
-            <Button className="bg-white text-amber-700 hover:bg-amber-50 font-bold">
+            <Button className="font-bold text-white" style={{ backgroundColor: '#D4AF37' }}>
               Inscrever
             </Button>
           </form>
@@ -520,11 +523,11 @@ export default function Home() {
             <div>
               <h4 className="text-white font-bold mb-4">Links Rápidos</h4>
               <ul className="space-y-2 text-sm">
-                <li><button onClick={() => scrollToSection('home')} className="hover:text-amber-600 transition">Home</button></li>
-                <li><button onClick={() => scrollToSection('cursos')} className="hover:text-amber-600 transition">Cursos</button></li>
-                <li><button onClick={() => scrollToSection('ebooks')} className="hover:text-amber-600 transition">E-books</button></li>
-                <li><button onClick={() => scrollToSection('servicos')} className="hover:text-amber-600 transition">Serviços</button></li>
-                <li><button onClick={() => scrollToSection('contato')} className="hover:text-amber-600 transition">Contato</button></li>
+                <li><button onClick={() => scrollToSection('home')} className="transition" style={{ color: '#D4AF37' }}>Home</button></li>
+                <li><button onClick={() => scrollToSection('cursos')} className="transition" style={{ color: '#D4AF37' }}>Cursos</button></li>
+                <li><button onClick={() => scrollToSection('ebooks')} className="transition" style={{ color: '#D4AF37' }}>E-books</button></li>
+                <li><button onClick={() => scrollToSection('servicos')} className="transition" style={{ color: '#D4AF37' }}>Serviços</button></li>
+                <li><button onClick={() => scrollToSection('contato')} className="transition" style={{ color: '#D4AF37' }}>Contato</button></li>
               </ul>
             </div>
 
@@ -532,15 +535,15 @@ export default function Home() {
               <h4 className="text-white font-bold mb-4">Contato</h4>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-amber-600 flex-shrink-0" />
+                  <Mail className="w-4 h-4 flex-shrink-0" style={{ color: '#D4AF37' }} />
                   <span>aureacommkt@gmail.com</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-amber-600 flex-shrink-0" />
+                  <Phone className="w-4 h-4 flex-shrink-0" style={{ color: '#D4AF37' }} />
                   <span>(11) 9999-9999</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-amber-600 flex-shrink-0" />
+                  <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: '#D4AF37' }} />
                   <span>São Paulo, SP</span>
                 </li>
               </ul>
@@ -549,13 +552,13 @@ export default function Home() {
             <div>
               <h4 className="text-white font-bold mb-4">Redes Sociais</h4>
               <div className="flex gap-4">
-                <a href="#" className="text-gray-400 hover:text-amber-600 transition">
+                <a href="#" className="text-gray-400 transition" style={{ color: '#D4AF37' }}>
                   <Instagram className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-amber-600 transition">
+                <a href="#" className="text-gray-400 transition" style={{ color: '#D4AF37' }}>
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-amber-600 transition">
+                <a href="#" className="text-gray-400 transition" style={{ color: '#D4AF37' }}>
                   <Facebook className="w-5 h-5" />
                 </a>
               </div>
@@ -566,8 +569,8 @@ export default function Home() {
             <div className="flex flex-col md:flex-row justify-between items-center text-sm gap-4">
               <p>&copy; 2025 AUREA COMMKT. Todos os direitos reservados.</p>
               <div className="flex gap-6">
-                <a href="#" className="hover:text-amber-600 transition">Política de Privacidade</a>
-                <a href="#" className="hover:text-amber-600 transition">Termos de Uso</a>
+                <a href="#" className="transition" style={{ color: '#D4AF37' }}>Política de Privacidade</a>
+                <a href="#" className="transition" style={{ color: '#D4AF37' }}>Termos de Uso</a>
               </div>
             </div>
           </div>
