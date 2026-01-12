@@ -109,30 +109,7 @@ export default function Home() {
       price: null,
       status: "Em Breve"
     },
-    {
-      id: 4,
-      title: "SEO para Criadores de Conteúdo",
-      description: "Domine as técnicas de otimização para mecanismos de busca e aumente sua visibilidade online.",
-      image: "/ebook-seo-conteudo-v2.png",
-      price: null,
-      status: "Em Breve"
-    },
-    {
-      id: 5,
-      title: "Copywriting para E-commerce",
-      description: "Aprenda a escrever descrições de produtos que vendem. Técnicas comprovadas para aumentar conversões.",
-      image: "/ebook-copywriting-ecommerce-v2.png",
-      price: null,
-      status: "Em Breve"
-    },
-    {
-      id: 6,
-      title: "Storytelling Empresarial",
-      description: "Use histórias para conectar com seu público e criar uma marca memorável e autêntica.",
-      image: "/ebook-storytelling-empresarial-v2.png",
-      price: null,
-      status: "Em Breve"
-    }
+
   ];
 
   return (
@@ -483,7 +460,7 @@ export default function Home() {
                   <MapPin className="w-6 h-6  flex-shrink-0 mt-1" style={{ color: "#D4AF37" }} />
                   <div>
                     <h4 className="font-bold text-gray-900">Localização</h4>
-                    <p className="text-gray-700">São Paulo, SP</p>
+                    <p className="text-gray-700">Florianópolis, SC</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-gray-300">
@@ -590,7 +567,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: '#D4AF37' }} />
-                  <span>São Paulo, SP</span>
+                  <span>Florianópolis, SC</span>
                 </li>
               </ul>
             </div>
