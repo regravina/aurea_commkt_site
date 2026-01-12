@@ -78,46 +78,60 @@ export default function Home() {
 
   const ebooks = [
     {
+      id: 0,
+      title: "Oratória: A Arte de Falar em Público",
+      description: "Domine a arte de falar em público com confiança e impacto. Um guia completo para apresentações memoráveis.",
+      image: "/ebook-oratoria.png",
+      price: null,
+      status: "Disponível"
+    },
+    {
       id: 1,
       title: "Comunicação Persuasiva",
       description: "Descubra os segredos da comunicação que influencia decisões. Técnicas práticas e estratégias comprovadas.",
       image: "/ebook-comunicacao-persuasiva-v2.png",
-      price: null
+      price: null,
+      status: "Em Breve"
     },
     {
       id: 2,
       title: "Estratégia de Conteúdo",
       description: "Planeje e execute uma estratégia de conteúdo que atrai, engaja e converte seu público-alvo.",
       image: "/ebook-estrategia-conteudo-v2.png",
-      price: null
+      price: null,
+      status: "Em Breve"
     },
     {
       id: 3,
       title: "Branding Linguístico",
       description: "Use a linguagem como ferramenta estratégica para construir uma marca memorável e diferenciada.",
       image: "/ebook-branding-linguistico-v2.png",
-      price: null
+      price: null,
+      status: "Em Breve"
     },
     {
       id: 4,
       title: "SEO para Criadores de Conteúdo",
       description: "Domine as técnicas de otimização para mecanismos de busca e aumente sua visibilidade online.",
       image: "/ebook-seo-conteudo-v2.png",
-      price: null
+      price: null,
+      status: "Em Breve"
     },
     {
       id: 5,
       title: "Copywriting para E-commerce",
       description: "Aprenda a escrever descrições de produtos que vendem. Técnicas comprovadas para aumentar conversões.",
       image: "/ebook-copywriting-ecommerce-v2.png",
-      price: null
+      price: null,
+      status: "Em Breve"
     },
     {
       id: 6,
       title: "Storytelling Empresarial",
       description: "Use histórias para conectar com seu público e criar uma marca memorável e autêntica.",
       image: "/ebook-storytelling-empresarial-v2.png",
-      price: null
+      price: null,
+      status: "Em Breve"
     }
   ];
 
@@ -315,7 +329,14 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {ebooks.map((ebook, idx) => (
-              <div key={ebook.id} className="bg-gray-50 rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition overflow-hidden animate-slide-up" style={{ borderColor: "#D4AF37", animationDelay: `${idx * 0.15}s` }}>
+              <div key={ebook.id} className="bg-gray-50 rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition overflow-hidden animate-slide-up relative" style={{ borderColor: "#D4AF37", animationDelay: `${idx * 0.15}s` }}>
+                {/* Status Badge */}
+                {ebook.status === "Em Breve" && (
+                  <div className="absolute top-4 right-4 bg-gray-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10">
+                    EM BREVE
+                  </div>
+                )}
+                
                 {/* E-book Cover Image */}
                 <div className="h-64 md:h-72 overflow-hidden bg-gray-200">
                   <img 
@@ -329,15 +350,19 @@ export default function Home() {
                 <div className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 mb-3">{ebook.title}</h3>
                   <p className="text-gray-700 text-sm mb-4">{ebook.description}</p>
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="text-2xl font-bold " style={{ color: "#D4AF37" }}>{ebook.price}</span>
-                  </div>
+                  {ebook.price && (
+                    <div className="flex justify-between items-center mb-4">
+                      <span className="text-2xl font-bold " style={{ color: "#D4AF37" }}>{ebook.price}</span>
+                    </div>
+                  )}
                   <Button 
-                    className="w-full  hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm flex items-center justify-center gap-2" style={{ backgroundColor: "#D4AF37" }}
+                    className="w-full  hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm flex items-center justify-center gap-2" 
+                    style={{ backgroundColor: "#D4AF37" }}
                     onClick={handleWhatsApp}
+                    disabled={ebook.status === "Em Breve"}
                   >
                     <Download className="w-4 h-4" />
-                    Adquirir E-book
+                    {ebook.status === "Em Breve" ? "Em Breve" : "Adquirir E-book"}
                   </Button>
                 </div>
               </div>
