@@ -17,7 +17,7 @@ export default function Home() {
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5511999999999?text=Olá%20AUREA%20COMMKT%2C%20gostaria%20de%20saber%20mais%20sobre%20seus%20cursos%20e%20serviços.', '_blank');
+    window.open('https://wa.me/5548988274343?text=Olá%20AUREA%20COMMKT%2C%20gostaria%20de%20saber%20mais%20sobre%20seus%20cursos%20e%20serviços.', '_blank');
   };
 
   const handleFormSubmit = (e: React.FormEvent) => {
@@ -82,21 +82,42 @@ export default function Home() {
       title: "Comunicação Persuasiva",
       description: "Descubra os segredos da comunicação que influencia decisões. Técnicas práticas e estratégias comprovadas.",
       image: "/ebook-comunicacao-persuasiva-v2.png",
-      price: "R$ 47"
+      price: null
     },
     {
       id: 2,
       title: "Estratégia de Conteúdo",
       description: "Planeje e execute uma estratégia de conteúdo que atrai, engaja e converte seu público-alvo.",
       image: "/ebook-estrategia-conteudo-v2.png",
-      price: "R$ 57"
+      price: null
     },
     {
       id: 3,
       title: "Branding Linguístico",
       description: "Use a linguagem como ferramenta estratégica para construir uma marca memorável e diferenciada.",
       image: "/ebook-branding-linguistico-v2.png",
-      price: "R$ 67"
+      price: null
+    },
+    {
+      id: 4,
+      title: "SEO para Criadores de Conteúdo",
+      description: "Domine as técnicas de otimização para mecanismos de busca e aumente sua visibilidade online.",
+      image: "/ebook-seo-conteudo-v2.png",
+      price: null
+    },
+    {
+      id: 5,
+      title: "Copywriting para E-commerce",
+      description: "Aprenda a escrever descrições de produtos que vendem. Técnicas comprovadas para aumentar conversões.",
+      image: "/ebook-copywriting-ecommerce-v2.png",
+      price: null
+    },
+    {
+      id: 6,
+      title: "Storytelling Empresarial",
+      description: "Use histórias para conectar com seu público e criar uma marca memorável e autêntica.",
+      image: "/ebook-storytelling-empresarial-v2.png",
+      price: null
     }
   ];
 
@@ -430,7 +451,7 @@ export default function Home() {
                   <Phone className="w-6 h-6  flex-shrink-0 mt-1" style={{ color: "#D4AF37" }} />
                   <div>
                     <h4 className="font-bold text-gray-900">WhatsApp</h4>
-                    <button onClick={handleWhatsApp} className="text-amber-600 hover: transition" style={{ color: "#D4AF37" }}>(11) 9999-9999</button>
+                    <button onClick={handleWhatsApp} className="text-amber-600 hover: transition" style={{ color: "#D4AF37" }}>(48) 98827-4343</button>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -540,7 +561,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-2">
                   <Phone className="w-4 h-4 flex-shrink-0" style={{ color: '#D4AF37' }} />
-                  <span>(11) 9999-9999</span>
+                  <span>(48) 98827-4343</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: '#D4AF37' }} />
