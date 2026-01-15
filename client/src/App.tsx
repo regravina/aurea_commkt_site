@@ -9,9 +9,13 @@ import Produtos from "./pages/Produtos";
 import Blog from "./pages/Blog";
 import Sobre from "./pages/Sobre";
 import FAQ from "./pages/FAQ";
-
+import PaymentSuccess from "./pages/PaymentSuccess";
+import PaymentFailure from "./pages/PaymentFailure";
+import PaymentPending from "./pages/PaymentPending";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
@@ -19,6 +23,10 @@ function Router() {
       <Route path={"/blog"} component={Blog} />
       <Route path={"/sobre"} component={Sobre} />
       <Route path={"/faq"} component={FAQ} />
+      <Route path={"/payment-success"} component={PaymentSuccess} />
+      <Route path={"/payment-failure"} component={PaymentFailure} />
+      <Route path={"/payment-pending"} component={PaymentPending} />
+      <Route path={"/admin"} component={AdminDashboard} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

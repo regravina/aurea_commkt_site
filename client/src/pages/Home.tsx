@@ -1,12 +1,20 @@
+import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook, ArrowRight, Menu, X, Download } from "lucide-react";
 import { useState } from "react";
 import { useLocation } from "wouter";
 import Testimonials from "@/components/Testimonials";
+import { trpc } from "@/lib/trpc";
+import { CheckoutModal } from "@/components/CheckoutModal";
 
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const [, navigate] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [checkoutModal, setCheckoutModal] = useState<{ isOpen: boolean; product: any }>({ isOpen: false, product: null });
 
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
@@ -23,6 +31,18 @@ export default function Home() {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert('Obrigado! Entraremos em contato em breve.');
+  };
+
+  const handleBuyEbook = (ebook: any) => {
+    setCheckoutModal({
+      isOpen: true,
+      product: {
+        id: ebook.id,
+        title: ebook.title,
+        price: ebook.price,
+        description: ebook.description,
+      },
+    });
   };
 
   const cursos = [
@@ -360,6 +380,15 @@ export default function Home() {
                         Comprar no Google Play
                       </Button>
                     </a>
+                  ) : ebook.price ? (
+                    <Button 
+                      className="w-full  hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm flex items-center justify-center gap-2" 
+                      style={{ backgroundColor: "#D4AF37" }}
+                      onClick={() => handleBuyEbook(ebook)}
+                    >
+                      <Download className="w-4 h-4" />
+                      Comprar Agora
+                    </Button>
                   ) : (
                     <Button 
                       className="w-full  hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm flex items-center justify-center gap-2" 
@@ -628,6 +657,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
     </div>
   );
 }
