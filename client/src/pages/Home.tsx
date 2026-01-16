@@ -136,7 +136,7 @@ export default function Home() {
       image: "/ebook-retorica-oratoria.png",
       price: "R$ 15,00",
       status: "Disponível",
-      link: "https://play.google.com/books/publish/u/0/a/12529235853107641193#book/ISBN:9786501889412/review"
+      link: "https://play.google.com/store/books/details?id=BdCuEQAAQBAJ"
     },
 
   ];
@@ -370,25 +370,27 @@ export default function Home() {
                       <Download className="w-4 h-4" />
                       Em Breve
                     </Button>
-                  ) : ebook.link ? (
-                    <a href={ebook.link} target="_blank" rel="noopener noreferrer" className="block">
+                  ) : ebook.price ? (
+                    ebook.link ? (
+                      <a href={ebook.link} target="_blank" rel="noopener noreferrer" className="block">
+                        <Button 
+                          className="w-full  hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm flex items-center justify-center gap-2" 
+                          style={{ backgroundColor: "#D4AF37" }}
+                        >
+                          <Download className="w-4 h-4" />
+                          💳 Comprar com MercadoPago
+                        </Button>
+                      </a>
+                    ) : (
                       <Button 
                         className="w-full  hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm flex items-center justify-center gap-2" 
                         style={{ backgroundColor: "#D4AF37" }}
+                        onClick={() => handleBuyEbook(ebook)}
                       >
                         <Download className="w-4 h-4" />
-                        Comprar no Google Play
+                        💳 Comprar com MercadoPago
                       </Button>
-                    </a>
-                  ) : ebook.price ? (
-                    <Button 
-                      className="w-full  hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm flex items-center justify-center gap-2" 
-                      style={{ backgroundColor: "#D4AF37" }}
-                      onClick={() => handleBuyEbook(ebook)}
-                    >
-                      <Download className="w-4 h-4" />
-                      Comprar Agora
-                    </Button>
+                    )
                   ) : (
                     <Button 
                       className="w-full  hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm flex items-center justify-center gap-2" 
@@ -658,6 +660,14 @@ export default function Home() {
         </div>
       </footer>
 
+      {/* Checkout Modal */}
+      {checkoutModal.product && (
+        <CheckoutModal
+          isOpen={checkoutModal.isOpen}
+          onClose={() => setCheckoutModal({ isOpen: false, product: null })}
+          product={checkoutModal.product}
+        />
+      )}
     </div>
   );
 }
