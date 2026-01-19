@@ -15,6 +15,7 @@ import PaymentPending from "./pages/PaymentPending";
 import AdminDashboard from "./pages/AdminDashboard";
 import MyOrders from "./pages/MyOrders";
 import AdminReports from "./pages/AdminReports";
+import Ebook from "./pages/Ebook";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -31,6 +32,7 @@ function Router() {
       <Route path={"/my-orders"} component={MyOrders} />
       <Route path={"/admin/reports"} component={AdminReports} />
       <Route path={"/admin"} component={AdminDashboard} />
+      <Route path={"/ebook"} component={Ebook} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

@@ -25,3 +25,10 @@
 - [x] Testar página de meus pedidos
 - [x] Testar relatórios
 - [x] Salvar checkpoint final
+
+## Fase 5: Correção de Cache e Otimizações
+- [x] Resolver problema de cache do Home.tsx
+- [x] Remover seção de e-books duplicada da Home
+- [x] Criar página /ebook com apenas "Retórica e Oratória"
+- [x] Atualizar link do Google Play com URL correta
+- [x] Testar em múltiplos navegadores e dispositivos
