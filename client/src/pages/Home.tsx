@@ -27,7 +27,7 @@ export default function Home() {
       image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030713898/AvnZmyNrFlhmFzrS.jpg",
       duration: "6 meses",
       price: "R$ 80,00",
-      link: "https://go.hotmart.com/D104320944X?dp=1",
+      link: "https://go.hotmart.com/I104320902G?dp=1",
       status: "Disponível"
     },
     {

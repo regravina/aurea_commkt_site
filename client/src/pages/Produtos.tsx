@@ -16,7 +16,7 @@ export default function Produtos() {
       duration: "Acesso por 6 meses",
       modules: 12,
       students: "50+",
-      link: "https://go.hotmart.com/D104320944X?dp=1",
+      link: "https://go.hotmart.com/I104320902G?dp=1",
       status: "Disponível"
     },
     {
