@@ -60,4 +60,26 @@
 - [x] Integrar links do Hotmart na página de Produtos
 - [x] Adicionar botões "Comprar Agora" com links funcionais
 - [x] Testar links do Hotmart
-- [ ] Salvar checkpoint final com integração Hotmart
+- [x] Salvar checkpoint final com integração Hotmart
+
+## Fase 9: Página FAQ
+- [ ] Criar página FAQ.tsx com perguntas sobre cursos
+- [ ] Adicionar perguntas sobre duração, acesso e certificado
+- [ ] Implementar accordion/collapse para respostas
+- [ ] Adicionar rota /faq no App.tsx
+- [ ] Testar responsividade
+
+## Fase 10: Formulário de Captura de Leads
+- [ ] Criar componente LeadCaptureForm
+- [ ] Integrar com tRPC para salvar e-mails
+- [ ] Adicionar validação de e-mail
+- [ ] Implementar mensagem de sucesso/erro
+- [ ] Adicionar formulário na página de Produtos
+- [ ] Testar envio de dados
+
+## Fase 11: Análise de Conversão
+- [ ] Configurar rastreamento de cliques em "Comprar Agora"
+- [ ] Implementar eventos de conversão
+- [ ] Criar dashboard de analytics
+- [ ] Testar rastreamento
+- [ ] Documentar métricas
