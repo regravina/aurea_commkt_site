@@ -29,7 +29,7 @@ export default function Produtos() {
       duration: "Acesso por 6 meses",
       modules: 8,
       students: "30+",
-      link: "https://aureacommkt.hotmart.host/comunicacao-basica-3bea9390-8041-493e-af2b-b4633a778c74",
+      link: "https://go.hotmart.com/D104320944X?dp=1",
       status: "Disponível"
     },
     {

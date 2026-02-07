@@ -37,7 +37,7 @@ export default function Home() {
       image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030713898/OFZoOIzVaqnZzPsk.jpg",
       duration: "6 meses",
       price: "R$ 30,00",
-      link: "https://aureacommkt.hotmart.host/comunicacao-basica-3bea9390-8041-493e-af2b-b4633a778c74",
+      link: "https://go.hotmart.com/D104320944X?dp=1",
       status: "Disponível"
     },
     {
