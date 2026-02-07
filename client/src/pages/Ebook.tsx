@@ -51,12 +51,12 @@ export default function Ebook() {
                 <div className="text-4xl font-bold mb-2" style={{ color: "#D4AF37" }}>
                   R$ 15,00
                 </div>
-                <p className="text-gray-600">Disponível no Google Play</p>
+                <p className="text-gray-600">Disponível no Hotmart</p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://play.google.com/store/books/details/Regina_Gravina_Retórica_e_Oratória_a_arte_de_cativ?id=BdCuEQAAQBAJ&hl=pt_BR"
+                  href="https://go.hotmart.com/A104321774N?dp=1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block"
@@ -185,7 +185,7 @@ export default function Ebook() {
             Adquira agora o e-book "Retórica e Oratória" e comece sua jornada para se tornar um orador impactante.
           </p>
           <a
-            href="https://play.google.com/store/books/details/Regina_Gravina_Retórica_e_Oratória_a_arte_de_cativ?id=BdCuEQAAQBAJ&hl=pt_BR"
+            href="https://go.hotmart.com/A104321774N?dp=1"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block"
