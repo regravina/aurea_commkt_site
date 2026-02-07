@@ -22,24 +22,33 @@ export default function Home() {
   const cursos = [
     {
       id: 1,
-      title: "Oratória e Apresentações",
-      description: "Domine a arte de falar em público. Desenvolva confiança e impacto em suas apresentações.",
-      image: "/curso-oratoria-v2.png",
-      duration: "5 semanas"
+      title: "Português para Concursos",
+      description: "Domine a Língua Portuguesa com foco em concursos públicos. Aprenda gramática, interpretação de textos e redação com técnicas comprovadas.",
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030713898/jMHsZOebsmwWJgrk.jpg",
+      duration: "6 meses",
+      price: "R$ 80,00",
+      link: "https://go.hotmart.com/D104320944X?dp=1",
+      status: "Disponível"
     },
     {
       id: 2,
-      title: "Linguística Aplicada ao Marketing - Parte 01",
-      description: "Fundamentos da escrita. Aprenda as bases da linguagem, gramática aplicada e técnicas de redação clara e persuasiva.",
-      image: "/curso-linguistica-parte1-v2.png",
-      duration: "4 semanas"
+      title: "Comunicação Básica",
+      description: "Fundamentos essenciais de comunicação. Aprenda técnicas de comunicação clara, persuasiva e eficaz para qualquer contexto.",
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030713898/XGjdEqOJzCumESMw.jpg",
+      duration: "6 meses",
+      price: "R$ 30,00",
+      link: "https://aureacommkt.hotmart.host/comunicacao-basica-3bea9390-8041-493e-af2b-b4633a778c74",
+      status: "Disponível"
     },
     {
       id: 3,
-      title: "Linguística Aplicada ao Marketing - Parte 02",
-      description: "Produção de textos de marketing e vendas. Crie conteúdo que converte e gera resultados reais para seu negócio.",
-      image: "/curso-linguistica-parte2-v2.png",
-      duration: "6 semanas"
+      title: "Oratória e Apresentações",
+      description: "Domine a arte de falar em público. Desenvolva confiança e impacto em suas apresentações.",
+      image: "/curso-oratoria.jpg",
+      duration: "5 semanas",
+      price: "Em breve",
+      link: null,
+      status: "Em Breve"
     }
   ];
 
@@ -195,18 +204,34 @@ export default function Home() {
                   />
                 </div>
                 
-                <div className="p-6">
+                <div className="p-6 relative">
+                  {curso.status === "Em Breve" && (
+                    <div className="absolute top-4 right-4 bg-gray-800 text-white px-3 py-1 rounded-full text-xs font-bold">EM BREVE</div>
+                  )}
+                  {curso.status === "Disponível" && (
+                    <div className="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold">DISPONÍVEL</div>
+                  )}
                   <h3 className="text-lg font-bold text-gray-900 mb-3">{curso.title}</h3>
                   <p className="text-gray-700 text-sm mb-4">{curso.description}</p>
                   <div className="flex justify-between items-center mb-4">
                     <span className="text-xs text-gray-600 font-medium">{curso.duration}</span>
                   </div>
+                  {curso.status === "Disponível" && (
+                    <p className="text-sm font-bold text-amber-700 mb-4">{curso.price}</p>
+                  )}
                   <Button 
                     className="w-full hover:bg-amber-700 text-white py-2 rounded-lg transition text-sm" 
                     style={{ backgroundColor: "#D4AF37" }}
-                    onClick={handleWhatsApp}
+                    onClick={() => {
+                      if (curso.status === "Disponível" && curso.link) {
+                        window.open(curso.link, '_blank');
+                      } else if (curso.status === "Em Breve") {
+                        handleWhatsApp();
+                      }
+                    }}
+                    disabled={curso.status === "Em Breve"}
                   >
-                    Saiba Mais
+                    {curso.status === "Disponível" ? "Comprar Agora" : "Em Breve"}
                   </Button>
                 </div>
               </div>

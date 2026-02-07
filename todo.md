@@ -61,6 +61,9 @@
 - [x] Adicionar botões "Comprar Agora" com links funcionais
 - [x] Testar links do Hotmart
 - [x] Salvar checkpoint final com integração Hotmart
+- [x] Atualizar seção de Cursos na Home com os 2 cursos do Hotmart
+- [x] Remover cursos que ainda não existem (Linguística Parte 01 e 02)
+- [x] Manter apenas Oratória como "Em Breve"
 
 ## Fase 9: Página FAQ
 - [ ] Criar página FAQ.tsx com perguntas sobre cursos
