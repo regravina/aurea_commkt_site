@@ -41,3 +41,23 @@
 - [x] Corrigir link CONTATO para ir ao final da landing page
 - [x] Testar mudanças
 - [ ] Salvar checkpoint final
+
+## Fase 7: Redes Sociais e Provas Sociais
+- [x] Criar conta Instagram (@aurea_commkt)
+- [x] Criar conta TikTok (@aurea_commkt)
+- [x] Criar conta Reddit (u/Aurea_ComMkt)
+- [x] Adicionar ícones de redes sociais no rodapé
+- [ ] Coletar depoimentos reais de alunos/clientes
+- [ ] Criar seção de depoimentos na landing page
+- [ ] Implementar carousel de depoimentos
+- [ ] Testar responsividade
+- [ ] Salvar checkpoint final com depoimentos
+
+## Fase 8: Integração com Hotmart
+- [x] Criar 2 cursos no Hotmart (Português para Concursos e Comunicação Básica)
+- [x] Obter links de divulgação dos cursos
+- [x] Criar capas profissionais para os cursos
+- [x] Integrar links do Hotmart na página de Produtos
+- [x] Adicionar botões "Comprar Agora" com links funcionais
+- [x] Testar links do Hotmart
+- [ ] Salvar checkpoint final com integração Hotmart

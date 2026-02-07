@@ -31,7 +31,7 @@ export default function Ebook() {
             {/* Image */}
             <div className="order-2 md:order-1">
               <img
-                src="/ebook-oratoria.png"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030713898/AimvHzNnvzseTumE.png"
                 alt="Retórica e Oratória: a arte de cativar pessoas"
                 className="w-full rounded-lg shadow-lg"
               />
