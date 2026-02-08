@@ -256,7 +256,7 @@ export default function Home() {
               <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
                 <iframe
                   className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
-                  src="https://www.youtube.com/embed/videoseries?list=UCndo5yUiK8ZQY9rt-wzaDqg"
+                  src="https://www.youtube.com/embed/videoseries?list=PL_DQgN49EqLX1vLwsesoB3C1vDC67X7ic"
                   title="AUREA YouTube Playlist"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
