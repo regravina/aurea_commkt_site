@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, Calendar, ArrowRight, X } from "lucide-react";
+import { Search, Calendar, ArrowRight, X, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 
@@ -85,12 +85,27 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+        <div className="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
+          <button 
+            onClick={() => navigate('/')}
+            className="flex items-center gap-2 text-amber-700 hover:text-amber-800 transition"
+          >
+            <ArrowLeft size={20} />
+            <span className="font-medium">Voltar</span>
+          </button>
+          <h1 className="text-xl md:text-2xl font-bold text-gray-900">Blog AUREA</h1>
+          <div className="w-20"></div>
+        </div>
+      </nav>
+
       {/* Header */}
       <section className="bg-gradient-to-r from-blue-50 to-teal-50 py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Blog AUREA
-          </h1>
+          </h2>
           <p className="text-lg text-gray-700 max-w-2xl">
             Artigos, insights e guias práticos sobre comunicação, marketing, análise de dados e desenvolvimento profissional.
           </p>
