@@ -1,141 +1,220 @@
+import { useState } from "react";
+import { Search, Calendar, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, User } from "lucide-react";
 import { useLocation } from "wouter";
+
+const articles = [
+  {
+    id: 1,
+    title: "A Era da Decisao: Transformando Dados em Poder de Negocio",
+    excerpt: "Descubra como transformar dados estruturados em decisoes estrategicas. Explore o desafio da sobrecarga de informacao e o caminho para a democracia analitica.",
+    category: "Analise de Dados",
+    author: "AUREA COMMKT",
+    date: "2026-02-08",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030713898/AvnZmyNrFlhmFzrS.jpg",
+    readTime: "8 min"
+  },
+  {
+    id: 2,
+    title: "Guia de Portugues para Concursos: Domine o Basico em 30 Dias",
+    excerpt: "Resumo visual das regras gramaticais essenciais para concursos publicos de nivel medio. Ortografia, pontuacao e novo acordo ortografico explicados de forma pratica.",
+    category: "Portugues",
+    author: "AUREA COMMKT",
+    date: "2026-02-08",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030713898/OFZoOIzVaqnZzPsk.jpg",
+    readTime: "10 min"
+  },
+  {
+    id: 3,
+    title: "Domine a Arte da Comunicacao: Do Basico ao Profissional",
+    excerpt: "Fundamentos essenciais da comunicacao: verbal, vocal e corporal. Aprenda os 6 elementos do processo comunicativo e tecnicas de feedback construtivo.",
+    category: "Comunicacao",
+    author: "AUREA COMMKT",
+    date: "2026-02-08",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030713898/AvnZmyNrFlhmFzrS.jpg",
+    readTime: "12 min"
+  },
+  {
+    id: 4,
+    title: "O Poder da Cultura Analitica: Do Feeling a Inteligencia Artificial",
+    excerpt: "Entenda como evoluir de decisoes baseadas em intuicao para uma cultura analitica. Explore a democracia analitica e o papel da IA & Data Science.",
+    category: "Estrategia",
+    author: "AUREA COMMKT",
+    date: "2026-02-08",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030713898/OFZoOIzVaqnZzPsk.jpg",
+    readTime: "9 min"
+  },
+  {
+    id: 5,
+    title: "Oratoria & Retorica: A Arte de Cativar Pessoas",
+    excerpt: "Fundamentos da comunicacao persuasiva unindo estrategia do discurso (Retorica) com performance do orador (Oratoria). Os tres pilares de Aristoteles aplicados.",
+    category: "Oratoria",
+    author: "AUREA COMMKT",
+    date: "2026-02-08",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030713898/AvnZmyNrFlhmFzrS.jpg",
+    readTime: "11 min"
+  }
+];
+
+const categories = ["Todos", "Analise de Dados", "Portugues", "Comunicacao", "Estrategia", "Oratoria"];
 
 export default function Blog() {
   const [, navigate] = useLocation();
+  const [selectedCategory, setSelectedCategory] = useState("Todos");
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const artigos = [
-    {
-      id: 1,
-      title: "5 Técnicas de Oratória que Transformam Apresentações",
-      excerpt: "Descubra as técnicas mais eficazes para melhorar sua performance ao falar em público.",
-      author: "AUREA COMMKT",
-      date: "15 de Dezembro, 2025",
-      category: "Oratória",
-      image: "/curso-oratoria.jpg"
-    },
-    {
-      id: 2,
-      title: "Como Escrever Textos que Vendem: Guia Prático",
-      excerpt: "Aprenda os segredos do copywriting persuasivo e aumente suas conversões.",
-      author: "AUREA COMMKT",
-      date: "12 de Dezembro, 2025",
-      category: "Marketing",
-      image: "/curso-linguistica-parte2.png"
-    },
-    {
-      id: 3,
-      title: "Linguagem Corporal: O Poder Silencioso da Comunicação",
-      excerpt: "Entenda como sua postura e gestos influenciam a percepção do seu público.",
-      author: "AUREA COMMKT",
-      date: "10 de Dezembro, 2025",
-      category: "Comunicação",
-      image: "/curso-oratoria.jpg"
-    },
-    {
-      id: 4,
-      title: "Estratégia de Conteúdo: Do Planejamento à Execução",
-      excerpt: "Crie um plano de conteúdo que atrai, engaja e converte seu público-alvo.",
-      author: "AUREA COMMKT",
-      date: "8 de Dezembro, 2025",
-      category: "Marketing",
-      image: "/curso-linguistica-parte1.png"
-    },
-    {
-      id: 5,
-      title: "Branding Linguístico: Construindo uma Marca Memorável",
-      excerpt: "Descubra como a linguagem define sua marca e diferencia você da concorrência.",
-      author: "AUREA COMMKT",
-      date: "5 de Dezembro, 2025",
-      category: "Branding",
-      image: "/ebook-branding-linguistico-v2.png"
-    },
-    {
-      id: 6,
-      title: "A Importância da Clareza na Escrita Profissional",
-      excerpt: "Técnicas para escrever de forma clara, concisa e profissional em qualquer contexto.",
-      author: "AUREA COMMKT",
-      date: "1 de Dezembro, 2025",
-      category: "Linguística",
-      image: "/curso-linguistica-parte1.png"
-    }
-  ];
+  const filteredArticles = articles.filter(article => {
+    const matchesCategory = selectedCategory === "Todos" || article.category === selectedCategory;
+    const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         article.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-        <div className="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
-          <button 
-            onClick={() => navigate('/')}
-            className="flex items-center gap-2 text-amber-700 hover:text-amber-800 transition"
-          >
-            <ArrowLeft size={20} />
-            <span className="font-medium">Voltar</span>
-          </button>
-          <h1 className="text-xl md:text-2xl font-bold text-gray-900">Blog</h1>
-          <div className="w-20"></div>
-        </div>
-      </nav>
-
-      {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-amber-50 to-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Blog AUREA COMMKT
-          </h2>
-          <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-            Artigos, dicas e insights sobre linguística, comunicação e marketing para potencializar seu negócio.
+      {/* Header */}
+      <section className="bg-gradient-to-r from-blue-50 to-teal-50 py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Blog AUREA
+          </h1>
+          <p className="text-lg text-gray-700 max-w-2xl">
+            Artigos, insights e guias praticos sobre comunicacao, marketing, analise de dados e desenvolvimento profissional.
           </p>
         </div>
       </section>
 
-      {/* Artigos */}
-      <section className="py-12 md:py-20">
+      {/* Search and Filters */}
+      <section className="py-8 md:py-12 border-b border-gray-200">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {artigos.map((artigo) => (
-              <article key={artigo.id} className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition">
-                <img src={artigo.image} alt={artigo.title} className="w-full h-48 object-cover" />
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="inline-block px-3 py-1 bg-amber-100 text-amber-700 text-xs font-medium rounded-full">
-                      {artigo.category}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2">{artigo.title}</h3>
-                  <p className="text-gray-700 text-sm mb-4 line-clamp-2">{artigo.excerpt}</p>
-                  <div className="flex items-center gap-4 text-xs text-gray-600 mb-4">
-                    <span className="flex items-center gap-1">
-                      <Calendar size={14} />
-                      {artigo.date}
-                    </span>
-                  </div>
-                  <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white">
-                    Ler Artigo
-                  </Button>
-                </div>
-              </article>
+          {/* Search Bar */}
+          <div className="mb-8">
+            <div className="relative">
+              <Search className="absolute left-4 top-3.5 text-gray-400" size={20} />
+              <input
+                type="text"
+                placeholder="Buscar artigos..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+              />
+            </div>
+          </div>
+
+          {/* Category Filter */}
+          <div className="flex flex-wrap gap-2">
+            {categories.map(category => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full font-medium transition ${
+                  selectedCategory === category
+                    ? "text-white"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                }`}
+                style={selectedCategory === category ? { backgroundColor: "#D4AF37" } : {}}
+              >
+                {category}
+              </button>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-12 md:py-20 bg-amber-50">
+      {/* Articles Grid */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          {filteredArticles.length > 0 ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredArticles.map((article) => (
+                <div
+                  key={article.id}
+                  className="bg-white rounded-lg shadow-md hover:shadow-lg transition overflow-hidden border border-gray-200"
+                >
+                  {/* Article Image */}
+                  <div className="h-48 overflow-hidden bg-gray-200">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-full object-cover hover:scale-105 transition duration-300"
+                    />
+                  </div>
+
+                  {/* Article Content */}
+                  <div className="p-6">
+                    {/* Category Badge */}
+                    <div className="mb-3">
+                      <span
+                        className="inline-block px-3 py-1 text-xs font-semibold text-white rounded-full"
+                        style={{ backgroundColor: "#D4AF37" }}
+                      >
+                        {article.category}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2">
+                      {article.title}
+                    </h3>
+
+                    {/* Excerpt */}
+                    <p className="text-gray-700 text-sm mb-4 line-clamp-3">
+                      {article.excerpt}
+                    </p>
+
+                    {/* Meta Info */}
+                    <div className="flex items-center gap-4 text-xs text-gray-600 mb-4 pb-4 border-b border-gray-200">
+                      <div className="flex items-center gap-1">
+                        <Calendar size={14} />
+                        {new Date(article.date).toLocaleDateString("pt-BR")}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <span>⏱️ {article.readTime}</span>
+                      </div>
+                    </div>
+
+                    {/* Read More Button */}
+                    <Button
+                      className="w-full text-white font-medium py-2 rounded-lg transition flex items-center justify-center gap-2"
+                      style={{ backgroundColor: "#D4AF37" }}
+                      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#C99E2E"}
+                      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#D4AF37"}
+                    >
+                      Ler Artigo
+                      <ArrowRight size={16} />
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-gray-600 text-lg">
+                Nenhum artigo encontrado. Tente outra busca ou categoria.
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gradient-to-r from-blue-50 to-teal-50 py-12 md:py-16">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            Quer Aprender Mais?
-          </h3>
-          <p className="text-gray-700 text-lg mb-6 max-w-2xl mx-auto">
-            Confira nossos cursos e e-books especializados para aprofundar seu conhecimento.
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Quer aprofundar seus conhecimentos?
+          </h2>
+          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+            Conheca nossos cursos especializados em comunicacao, marketing e desenvolvimento profissional.
           </p>
-          <Button 
+          <Button
             onClick={() => navigate('/produtos')}
-            className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3"
+            className="text-white px-8 py-3 text-lg rounded-lg transition"
+            style={{ backgroundColor: "#D4AF37" }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#C99E2E"}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#D4AF37"}
           >
-            Ver Produtos
+            Descubra Nossos Cursos
+            <ArrowRight className="ml-2" size={20} />
           </Button>
         </div>
       </section>

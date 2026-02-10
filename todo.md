@@ -92,3 +92,11 @@
 - [x] Integrar na página Home
 - [x] Testar embed de playlist do YouTube
 - [ ] Salvar checkpoint
+
+## Fase 13: Página de Blog
+- [ ] Estruturar conteúdo dos 5 artigos
+- [ ] Criar página Blog com cards dos artigos
+- [ ] Integrar imagens dos artigos
+- [ ] Criar páginas individuais de cada artigo
+- [ ] Testar navegação e responsividade
+- [ ] Salvar checkpoint
