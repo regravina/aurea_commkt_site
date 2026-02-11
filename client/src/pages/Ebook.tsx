@@ -49,7 +49,7 @@ export default function Ebook() {
 
               <div className="mb-8">
                 <div className="text-4xl font-bold mb-2" style={{ color: "#D4AF37" }}>
-                  R$ 15,00
+                  R$ 60,00
                 </div>
                 <p className="text-gray-600">Disponível no Hotmart</p>
               </div>
