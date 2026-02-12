@@ -122,3 +122,24 @@
 - [x] Adicionar validação de email no formulário
 - [x] Testar formulário de Newsletter
 - [ ] Salvar checkpoint com páginas legais e Newsletter
+
+## Fase 16: Newsletter com Banco de Dados
+- [x] Criar tabela newsletter_subscribers no banco de dados
+- [x] Criar procedure tRPC para inscrição na newsletter
+- [x] Conectar NewsletterForm com tRPC
+- [x] Adicionar validação de email duplicado
+- [x] Testar inscrição na newsletter
+
+## Fase 17: Página de Depoimentos Dedicada
+- [x] Criar página Testimonials.tsx
+- [x] Adicionar mais depoimentos (Audrey, Fabiane, Thais)
+- [x] Implementar grid responsivo para depoimentos
+- [x] Adicionar navegação de volta para Home
+- [x] Integrar link na Home para página de depoimentos
+
+## Fase 18: Analytics e Rastreamento
+- [x] Configurar sistema de analytics customizado
+- [x] Rastrear cliques em CTAs (Cursos, E-books, etc)
+- [x] Rastrear conversões de Newsletter
+- [x] Rastrear visualizações de páginas
+- [x] Integrar analytics no App.tsx

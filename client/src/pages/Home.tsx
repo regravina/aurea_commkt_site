@@ -300,6 +300,21 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="text-center mt-8">
+            <Button
+              onClick={() => navigate("/testimonials")}
+              className="text-white px-8 py-3 rounded-lg transition font-medium"
+              style={{ backgroundColor: "#D4AF37" }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = "#C99E2E")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = "#D4AF37")
+              }
+            >
+              Ver Todos os Depoimentos
+            </Button>
+          </div>
         </div>
       </section>
 

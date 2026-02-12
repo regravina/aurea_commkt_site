@@ -29,6 +29,13 @@
       "when": 1770471507343,
       "tag": "0003_gray_vengeance",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1770924179615,
+      "tag": "0004_slim_caretaker",
+      "breakpoints": true
     }
   ]
 }

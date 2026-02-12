@@ -2,9 +2,10 @@ import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router, protectedProcedure } from "./_core/trpc";
-import { getProducts, getProductById, getUserOrders } from "./db";
+import { getProducts, getProductById, getUserOrders, subscribeToNewsletter, getNewsletterSubscriber, unsubscribeFromNewsletter } from "./db";
 import { createMercadopagoPreference } from "./mercadopago";
 import { z } from "zod";
+import { TRPCError } from "@trpc/server";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -49,6 +50,63 @@ export const appRouter = router({
         } catch (error) {
           console.error("[tRPC] Error creating payment:", error);
           throw error;
+        }
+      }),
+  }),
+
+  newsletter: router({
+    subscribe: publicProcedure
+      .input(z.object({
+        email: z.string().email("E-mail inválido"),
+        name: z.string().optional(),
+      }))
+      .mutation(async ({ input }) => {
+        try {
+          const existing = await getNewsletterSubscriber(input.email);
+          if (existing && existing.status === "active") {
+            throw new TRPCError({
+              code: "CONFLICT",
+              message: "Este e-mail já está inscrito na newsletter.",
+            });
+          }
+          const result = await subscribeToNewsletter(input.email, input.name);
+          if (!result) {
+            throw new TRPCError({
+              code: "INTERNAL_SERVER_ERROR",
+              message: "Falha ao inscrever-se na newsletter.",
+            });
+          }
+          return {
+            success: true,
+            message: "Inscrição realizada com sucesso!",
+          };
+        } catch (error) {
+          if (error instanceof TRPCError) throw error;
+          console.error("[tRPC] Error subscribing to newsletter:", error);
+          throw new TRPCError({
+            code: "INTERNAL_SERVER_ERROR",
+            message: "Erro ao processar sua inscrição.",
+          });
+        }
+      }),
+
+    unsubscribe: publicProcedure
+      .input(z.object({
+        email: z.string().email(),
+      }))
+      .mutation(async ({ input }) => {
+        try {
+          const result = await unsubscribeFromNewsletter(input.email);
+          return {
+            success: true,
+            message: "Você foi removido da newsletter.",
+          };
+        } catch (error) {
+          console.error("[tRPC] Error unsubscribing from newsletter:", error);
+          throw new TRPCError({
+            code: "INTERNAL_SERVER_ERROR",
+            message: "Erro ao remover inscrição.",
+          });
         }
       }),
   }),

@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { Mail, CheckCircle, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trpc } from "@/lib/trpc";
+import { analytics } from "@/lib/analytics";
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
   );
   const [message, setMessage] = useState("");
+
+  const subscribeMutation = trpc.newsletter.subscribe.useMutation();
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -33,63 +38,83 @@ export default function NewsletterForm() {
     setStatus("loading");
 
     try {
-      // Simular envio (em produção, isso seria uma chamada tRPC)
-      // const response = await trpc.newsletter.subscribe.useMutation();
-      
-      // Por enquanto, simulamos sucesso após 1 segundo
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await subscribeMutation.mutateAsync({
+        email,
+        name: name || undefined,
+      });
+
+      // Track successful newsletter subscription
+      analytics.trackNewsletterSubscription(email, true);
 
       setStatus("success");
       setMessage("Obrigado! Você foi inscrito na nossa newsletter.");
       setEmail("");
+      setName("");
 
       // Limpar mensagem de sucesso após 5 segundos
       setTimeout(() => {
         setStatus("idle");
         setMessage("");
       }, 5000);
-    } catch (error) {
+    } catch (error: any) {
+      // Track failed newsletter subscription
+      analytics.trackNewsletterSubscription(email, false);
+
       setStatus("error");
-      setMessage(
-        "Ocorreu um erro ao inscrever-se. Por favor, tente novamente."
-      );
+      const errorMessage = error?.message || "Ocorreu um erro ao inscrever-se. Por favor, tente novamente.";
+      setMessage(errorMessage);
     }
   };
 
   return (
     <div className="w-full">
       <form onSubmit={handleSubmit} className="space-y-3">
-        <div className="flex flex-col sm:flex-row gap-2">
-          <div className="flex-1 relative">
-            <Mail
-              size={18}
-              className="absolute left-3 top-3 text-gray-400"
-            />
+        <div className="flex flex-col gap-2">
+          {/* Name input (optional) */}
+          <div className="relative">
             <input
-              type="email"
-              placeholder="Seu e-mail"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              placeholder="Seu nome (opcional)"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               disabled={status === "loading"}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400 disabled:bg-gray-100"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400 disabled:bg-gray-100"
             />
           </div>
-          <Button
-            type="submit"
-            disabled={status === "loading" || status === "success"}
-            className="text-white px-6 py-2 rounded-lg transition font-medium"
-            style={{ backgroundColor: "#D4AF37" }}
-            onMouseEnter={(e) =>
-              !e.currentTarget.disabled &&
-              (e.currentTarget.style.backgroundColor = "#C99E2E")
-            }
-            onMouseLeave={(e) =>
-              !e.currentTarget.disabled &&
-              (e.currentTarget.style.backgroundColor = "#D4AF37")
-            }
-          >
-            {status === "loading" ? "Inscrevendo..." : "Inscrever"}
-          </Button>
+
+          {/* Email input */}
+          <div className="flex flex-col sm:flex-row gap-2">
+            <div className="flex-1 relative">
+              <Mail
+                size={18}
+                className="absolute left-3 top-3 text-gray-400"
+              />
+              <input
+                type="email"
+                placeholder="Seu e-mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={status === "loading"}
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400 disabled:bg-gray-100"
+              />
+            </div>
+            <Button
+              type="submit"
+              disabled={status === "loading" || status === "success"}
+              className="text-white px-6 py-2 rounded-lg transition font-medium"
+              style={{ backgroundColor: "#D4AF37" }}
+              onMouseEnter={(e) =>
+                !e.currentTarget.disabled &&
+                (e.currentTarget.style.backgroundColor = "#C99E2E")
+              }
+              onMouseLeave={(e) =>
+                !e.currentTarget.disabled &&
+                (e.currentTarget.style.backgroundColor = "#D4AF37")
+              }
+            >
+              {status === "loading" ? "Inscrevendo..." : "Inscrever"}
+            </Button>
+          </div>
         </div>
 
         {/* Mensagens de status */}

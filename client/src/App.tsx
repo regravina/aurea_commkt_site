@@ -1,9 +1,11 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { useEffect } from "react";
+import { analytics } from "./lib/analytics";
 import Home from "./pages/Home";
 import Produtos from "./pages/Produtos";
 import Blog from "./pages/Blog";
@@ -18,8 +20,16 @@ import AdminReports from "./pages/AdminReports";
 import Ebook from "./pages/Ebook";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
+import Testimonials from "./pages/Testimonials";
 
 function Router() {
+  const [location] = useLocation();
+
+  // Track page views when location changes
+  useEffect(() => {
+    analytics.trackPageView(location);
+  }, [location]);
+
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
@@ -37,6 +47,7 @@ function Router() {
       <Route path={"/ebook"} component={Ebook} />
       <Route path={"/privacy-policy"} component={PrivacyPolicy} />
       <Route path={"/terms-of-use"} component={TermsOfUse} />
+      <Route path={"/testimonials"} component={Testimonials} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

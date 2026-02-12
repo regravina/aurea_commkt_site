@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, products, orders, InsertOrder, Order } from "../drizzle/schema";
+import { InsertUser, users, products, orders, InsertOrder, Order, newsletterSubscribers, InsertNewsletterSubscriber, NewsletterSubscriber } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -164,6 +164,58 @@ export async function getUserOrders(userId: number) {
     return [];
   }
   return await db.select().from(orders).where(eq(orders.userId, userId));
+}
+
+// Newsletter queries
+export async function subscribeToNewsletter(email: string, name?: string): Promise<NewsletterSubscriber | null> {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot subscribe to newsletter: database not available");
+    return null;
+  }
+  try {
+    const subscriber: InsertNewsletterSubscriber = {
+      email,
+      name: name || undefined,
+      status: "active",
+    };
+    await db.insert(newsletterSubscribers).values(subscriber).onDuplicateKeyUpdate({
+      set: { status: "active" },
+    });
+    const result = await db.select().from(newsletterSubscribers).where(eq(newsletterSubscribers.email, email)).limit(1);
+    return result.length > 0 ? result[0] : null;
+  } catch (error) {
+    console.error("[Database] Failed to subscribe to newsletter:", error);
+    return null;
+  }
+}
+
+export async function getNewsletterSubscriber(email: string) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get newsletter subscriber: database not available");
+    return undefined;
+  }
+  const result = await db.select().from(newsletterSubscribers).where(eq(newsletterSubscribers.email, email)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function unsubscribeFromNewsletter(email: string) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot unsubscribe from newsletter: database not available");
+    return null;
+  }
+  try {
+    await db.update(newsletterSubscribers)
+      .set({ status: "unsubscribed", unsubscribedAt: new Date() })
+      .where(eq(newsletterSubscribers.email, email));
+    const result = await db.select().from(newsletterSubscribers).where(eq(newsletterSubscribers.email, email)).limit(1);
+    return result.length > 0 ? result[0] : null;
+  } catch (error) {
+    console.error("[Database] Failed to unsubscribe from newsletter:", error);
+    return null;
+  }
 }
 
 
