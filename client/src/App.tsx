@@ -21,6 +21,8 @@ import Ebook from "./pages/Ebook";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import Testimonials from "./pages/Testimonials";
+import CursoPortugues from "./pages/CursoPorugues";
+import CursoComunicacao from "./pages/CursoComunicacao";
 
 function Router() {
   const [location] = useLocation();
@@ -48,6 +50,8 @@ function Router() {
       <Route path={"/privacy-policy"} component={PrivacyPolicy} />
       <Route path={"/terms-of-use"} component={TermsOfUse} />
       <Route path={"/testimonials"} component={Testimonials} />
+      <Route path={"/curso/portugues"} component={CursoPortugues} />
+      <Route path={"/curso/comunicacao"} component={CursoComunicacao} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
