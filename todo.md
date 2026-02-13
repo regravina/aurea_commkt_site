@@ -153,3 +153,23 @@
 - [ ] Implementar rastreamento de conversão
 - [ ] Criar estratégia de anúncios pagos (R$ 1.000 budget)
 - [ ] Salvar checkpoint com sistema de vendas completo
+
+## Fase 20: Pixel Meta e Retargeting
+- [ ] Implementar Meta Pixel no site
+- [ ] Configurar eventos de rastreamento Meta
+- [ ] Conectar Meta Pixel com Google Ads
+- [ ] Criar audiências de retargeting
+
+## Fase 21: Página de Obrigado Pós-Compra
+- [ ] Criar página ThankYou.tsx
+- [ ] Adicionar instruções de acesso ao curso
+- [ ] Integrar com tRPC para validar compra
+- [ ] Adicionar download de material bônus
+- [ ] Redirecionar automaticamente após compra
+
+## Fase 22: Automação de Email
+- [ ] Integrar com serviço de email (SendGrid/Mailchimp)
+- [ ] Criar sequência de boas-vindas (5 emails)
+- [ ] Configurar triggers automáticos
+- [ ] Testar fluxo completo
+- [ ] Documentar configuração

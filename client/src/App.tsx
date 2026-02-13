@@ -23,6 +23,7 @@ import TermsOfUse from "./pages/TermsOfUse";
 import Testimonials from "./pages/Testimonials";
 import CursoPortugues from "./pages/CursoPorugues";
 import CursoComunicacao from "./pages/CursoComunicacao";
+import ThankYou from "./pages/ThankYou";
 
 function Router() {
   const [location] = useLocation();
@@ -52,6 +53,7 @@ function Router() {
       <Route path={"/testimonials"} component={Testimonials} />
       <Route path={"/curso/portugues"} component={CursoPortugues} />
       <Route path={"/curso/comunicacao"} component={CursoComunicacao} />
+      <Route path={"/thank-you"} component={ThankYou} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
