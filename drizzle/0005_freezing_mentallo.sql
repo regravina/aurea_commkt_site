@@ -1,0 +1,1 @@
+ALTER TABLE `products` MODIFY COLUMN `type` enum('ebook','course','immersion') NOT NULL;

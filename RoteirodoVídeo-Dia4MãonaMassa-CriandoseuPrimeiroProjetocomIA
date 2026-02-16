@@ -1,0 +1,286 @@
+# Roteiro do Vídeo - Dia 4: Mão na Massa - Criando seu Primeiro Projeto com IA
+
+**Título do Vídeo:** Do Planejamento à Execução: Seu Primeiro Projeto de IA
+
+**Duração Estimada:** 1h 30min
+
+**Tom:** Prático, passo a passo, focado em execução. Mostrar exatamente como fazer.
+
+---
+
+### Bloco 1: Boas-vindas e Contexto (10 min)
+
+**(CENA: Você, olhando para a câmera)**
+
+**VOCÊ:** "Bem-vindo ao Dia 4! Até agora, a gente aprendeu a teoria, as ferramentas, os casos de sucesso. Mas hoje, a gente vai fazer de verdade.
+
+Hoje, a gente vai criar um projeto de IA do zero. Você vai aprender a planejar, executar e medir resultados.
+
+E o legal é que você vai sair daqui com um projeto pronto que você pode usar no seu negócio.
+
+Então prepara, porque hoje é dia de trabalhar!"
+
+---
+
+### Bloco 2: Planejando seu Projeto (20 min)
+
+**(CENA: Slides com um framework de planejamento)**
+
+**VOCÊ:** "Antes de começar qualquer projeto de IA, você precisa planejar. E planejamento significa responder 5 perguntas:
+
+**Pergunta 1: Qual é o Problema?**
+
+Você precisa identificar um problema real no seu negócio. Não é um problema hipotético. É um problema que está te custando dinheiro ou tempo agora.
+
+Exemplos:
+- 'Eu gasto 5 horas por semana respondendo e-mails de clientes'
+- 'Minha taxa de conversão é baixa porque eu não consigo personalizar o atendimento'
+- 'Eu preciso criar 100 peças de conteúdo por mês e isso toma muito tempo'
+
+**Pergunta 2: Como IA Pode Resolver?**
+
+Agora você pensa: como IA pode resolver esse problema?
+
+- Problema: Gasto 5 horas respondendo e-mails → Solução: Chatbot que responde automaticamente
+- Problema: Taxa de conversão baixa → Solução: Personalização com IA
+- Problema: Preciso criar muito conteúdo → Solução: Automação com IA
+
+**Pergunta 3: Qual é o Impacto Esperado?**
+
+Qual é o resultado que você espera? Seja específico.
+
+- 'Quero reduzir o tempo gasto em e-mails de 5 horas para 1 hora por semana'
+- 'Quero aumentar a taxa de conversão de 2% para 3%'
+- 'Quero criar 100 peças de conteúdo em 1 semana em vez de 1 mês'
+
+**Pergunta 4: Qual é o Orçamento?**
+
+Quanto você está disposto a gastar? Seja realista.
+
+- Ferramentas de IA custam entre R$ 0 e R$ 5.000 por mês
+- Implementação pode custar entre R$ 0 e R$ 10.000
+- Treinamento pode custar entre R$ 0 e R$ 5.000
+
+**Pergunta 5: Qual é a Timeline?**
+
+Quanto tempo você tem? Quando você quer ter resultados?
+
+- Alguns projetos levam 1 semana
+- Outros levam 1 mês
+- Outros levam 3 meses
+
+Agora, vamos fazer um exercício prático aqui comigo. Vou criar um projeto de exemplo, e você pode seguir o mesmo framework para seu projeto.
+
+**(Mostra um exemplo na tela)**
+
+**Você:** 'Vou criar um projeto de automação de conteúdo para minha agência de marketing.'
+
+**Pergunta 1 - Problema:** 'Eu gasto 40 horas por semana criando conteúdo para meus clientes'
+
+**Pergunta 2 - Solução:** 'Vou usar IA para gerar ideias, escrever textos e criar imagens automaticamente'
+
+**Pergunta 3 - Impacto:** 'Quero reduzir para 20 horas por semana e atender 3x mais clientes'
+
+**Pergunta 4 - Orçamento:** 'Vou gastar R$ 500 por mês em ferramentas'
+
+**Pergunta 5 - Timeline:** 'Quero ter tudo pronto em 2 semanas'
+
+Pronto! Agora você tem um projeto bem definido."
+
+---
+
+### Bloco 3: Projeto Guiado 1 - Automação de Conteúdo (35 min)
+
+**(CENA: Tela compartilhada mostrando o processo passo a passo)**
+
+**VOCÊ:** "Agora vamos criar um projeto real: automação de conteúdo para um mês de Instagram.
+
+Vamos imaginar que você é dono de uma agência de marketing e precisa criar conteúdo para o Instagram de um cliente.
+
+**Passo 1: Definir o Tema**
+
+Você decide: qual é o tema do mês? Vamos dizer 'Produtividade com IA'.
+
+**Passo 2: Gerar Ideias**
+
+Você usa ChatGPT para gerar ideias:
+
+'Você é um especialista em marketing digital. Gere 30 ideias de conteúdo para o Instagram de uma agência de marketing. O tema é 'Produtividade com IA'. O público-alvo são pequenos empreendedores. As ideias devem ser educativas e gerar engajamento. Estruture em uma tabela com: Número, Ideia, Descrição.'
+
+**(Mostra a resposta do ChatGPT na tela)**
+
+**VOCÊ:** 'Pronto! Temos 30 ideias. Agora você escolhe as 20 melhores.'
+
+**Passo 3: Escrever o Conteúdo**
+
+Para cada ideia, você usa ChatGPT para escrever o texto:
+
+'Escreva um post para Instagram sobre [ideia]. O tom deve ser profissional mas acessível. Máximo 150 caracteres. Inclua um call-to-action. Inclua 3 hashtags relevantes.'
+
+**(Mostra a resposta na tela)**
+
+**VOCÊ:** 'Pronto! Você tem o texto do post.'
+
+**Passo 4: Criar a Imagem**
+
+Você usa Midjourney para criar a imagem:
+
+'Crie uma imagem para um post sobre [tema]. A imagem deve ser moderna, profissional, com cores vibrantes. Estilo: fotografia, 4K, profissional.'
+
+**(Mostra a imagem gerada na tela)**
+
+**VOCÊ:** 'Pronto! Você tem a imagem.'
+
+**Passo 5: Agendar a Publicação**
+
+Você usa Buffer ou Hootsuite para agendar:
+
+1. Você faz upload da imagem
+2. Você copia o texto do post
+3. Você agenda para publicar em um horário específico
+
+**(Mostra o processo na tela)**
+
+**VOCÊ:** 'Pronto! O post vai ser publicado automaticamente no horário que você escolheu.'
+
+**Resultado:**
+
+Em 1 dia, você criou 20 posts para o mês inteiro. Isso que levaria 1 semana agora levou 1 dia.
+
+Agora imagine: você faz isso para 10 clientes. Você consegue criar 200 posts por mês. Isso que levaria 2 meses agora leva 1 semana."
+
+---
+
+### Bloco 4: Projeto Guiado 2 - Mini-Chatbot (35 min)
+
+**(CENA: Tela compartilhada mostrando a criação de um chatbot)**
+
+**VOCÊ:** "Agora vamos criar outro projeto: um mini-chatbot para responder perguntas de clientes.
+
+Vamos imaginar que você é dono de uma loja online e recebe muitas perguntas repetidas.
+
+**Passo 1: Identificar as Perguntas Mais Comuns**
+
+Você coleta as 10 perguntas mais comuns:
+1. 'Qual é o horário de funcionamento?'
+2. 'Como faço para rastrear meu pedido?'
+3. 'Qual é a política de devolução?'
+4. 'Vocês entregam para fora da cidade?'
+5. 'Como faço para cancelar meu pedido?'
+6. 'Qual é o prazo de entrega?'
+7. 'Vocês aceitam cartão de crédito?'
+8. 'Como faço para trocar um produto?'
+9. 'Vocês têm cupom de desconto?'
+10. 'Como faço para entrar em contato com o suporte?'
+
+**Passo 2: Criar Respostas Boas**
+
+Para cada pergunta, você cria uma resposta boa. Exemplo:
+
+Pergunta: 'Qual é o horário de funcionamento?'
+Resposta: 'Funcionamos de segunda a sexta, das 9h às 18h. Aos sábados, das 9h às 13h. Aos domingos, estamos fechados.'
+
+**Passo 3: Escolher uma Plataforma**
+
+Você escolhe uma plataforma para criar o chatbot. Opções:
+- Zendesk
+- Intercom
+- Drift
+- Tidio
+
+Vamos usar Tidio como exemplo.
+
+**(Mostra o Tidio na tela)**
+
+**Passo 4: Configurar o Chatbot**
+
+Você:
+1. Cria uma conta
+2. Conecta ao seu WhatsApp ou site
+3. Adiciona as 10 perguntas e respostas
+4. Configura para que o chatbot responda automaticamente
+
+**(Mostra o processo na tela)**
+
+**Passo 5: Testar**
+
+Você testa o chatbot:
+1. Você envia uma pergunta
+2. O chatbot responde automaticamente
+3. Se a resposta está boa, ótimo
+4. Se não, você ajusta
+
+**(Mostra o teste na tela)**
+
+**Resultado:**
+
+Agora, quando um cliente envia uma pergunta comum, o chatbot responde em segundos. Você economiza horas de trabalho por semana."
+
+---
+
+### Bloco 5: Medindo Resultados (15 min)
+
+**(CENA: Slides mostrando como medir resultados)**
+
+**VOCÊ:** "Ok, você criou um projeto de IA. Agora, como você sabe se funcionou?
+
+Você mede resultados. E para medir, você precisa de métricas.
+
+**Para Automação de Conteúdo:**
+
+- Quantas horas você economizou?
+- Qual é o engajamento dos posts?
+- Qual é a taxa de conversão?
+- Qual é o ROI?
+
+**Para Chatbot:**
+
+- Quantas perguntas foram respondidas automaticamente?
+- Qual é a satisfação do cliente?
+- Quanto tempo você economizou?
+- Qual é o custo por conversa?
+
+**Como Medir:**
+
+1. Defina a métrica
+2. Meça antes (baseline)
+3. Implemente a IA
+4. Meça depois
+5. Compare
+
+Exemplo:
+
+Antes: Você gasta 40 horas por semana criando conteúdo
+Depois: Você gasta 20 horas por semana criando conteúdo
+Resultado: Você economizou 20 horas por semana
+
+Se você cobra R$ 100 por hora, você economizou R$ 2.000 por semana.
+
+Se a ferramenta custa R$ 500 por mês, o ROI é: (R$ 8.000 por mês - R$ 500) / R$ 500 = 1.500%
+
+Isso é um retorno incrível!"
+
+---
+
+### Bloco 6: Encerramento (15 min)
+
+**(CENA: Você de volta, olhando para a câmera)**
+
+**VOCÊ:** "E aí, como foi? Você viu 2 projetos completos de IA. Um de automação de conteúdo e outro de chatbot.
+
+Hoje, a gente aprendeu:
+
+- Como planejar um projeto de IA
+- Como criar um projeto de automação de conteúdo
+- Como criar um mini-chatbot
+- Como medir resultados
+
+Mas lembra: o importante agora é você fazer. Não é só assistir. É fazer.
+
+Escolha um problema no seu negócio. Aplique o framework que a gente viu. Crie um projeto. Mede resultados.
+
+Amanhã, no Dia 5, a gente vai falar sobre monetização e escalabilidade. Como você pode transformar o que aprendeu em renda.
+
+Até amanhã!"
+
+**(FIM DO VÍDEO)**

@@ -1,0 +1,189 @@
+# Roteiro do Vídeo - Dia 2: Ferramentas Práticas de IA - Seu Canivete Suíço Digital
+
+**Título do Vídeo:** Dominando as Ferramentas de IA: Do ChatGPT ao MANUS
+
+**Duração Estimada:** 1h 30min
+
+**Tom:** Prático, energético, focado em "mão na massa". Mostrar ferramentas em ação.
+
+---
+
+### Bloco 1: Boas-vindas e Contexto (10 min)
+
+**(CENA: Você, olhando para a câmera com um sorriso)**
+
+**VOCÊ:** "Bem-vindo ao Dia 2! Ontem a gente entendeu o que é IA, os pilares, como ela funciona. Hoje a gente vai fazer o que realmente importa: **usar IA**.
+
+Porque de nada adianta entender a teoria se você não sabe como colocar em prática. Então hoje, a gente vai explorar as ferramentas que você vai usar todos os dias para criar conteúdo, automatizar tarefas e resolver problemas.
+
+Vamos começar com uma pergunta simples: quantas vezes você já usou uma ferramenta sem entender como ela funciona? Provavelmente várias vezes. Você usa o Google sem saber exatamente como o algoritmo funciona. Você usa o WhatsApp sem entender a criptografia. Da mesma forma, você pode usar IA sem entender toda a complexidade por trás.
+
+Mas aqui está a diferença: quando você entende um pouco de como a ferramenta funciona, você consegue usá-la muito melhor. Você consegue extrair muito mais valor.
+
+Então hoje, a gente vai entender como usar as principais ferramentas de IA disponíveis agora. E mais importante: a gente vai praticar."
+
+---
+
+### Bloco 2: Introdução às Grandes Ferramentas de IA (15 min)
+
+**(CENA: Slides com logos das ferramentas)**
+
+**VOCÊ:** "Existem centenas de ferramentas de IA no mercado. Mas a gente vai focar nas que realmente importam, as que você vai usar de verdade.
+
+**ChatGPT** - Feito pela OpenAI. É um modelo de linguagem que consegue conversar com você, responder perguntas, escrever textos, código, praticamente qualquer coisa baseada em texto.
+
+**Claude** - Feito pela Anthropic. É similar ao ChatGPT, mas com algumas diferenças importantes. Ele é muito bom em análise de textos longos e em tarefas que exigem raciocínio lógico.
+
+**MANUS** - Feito pela Manus. É uma plataforma que integra várias ferramentas de IA em um só lugar. Você consegue fazer desde criação de conteúdo até automação de processos. E o legal é que MANUS é feito especificamente para produtividade e negócios.
+
+**Midjourney** - É especializado em geração de imagens. Você descreve uma imagem e ele cria.
+
+**DALL-E** - Similar ao Midjourney, também gera imagens a partir de descrições.
+
+**Eleven Labs** - Especializado em geração de áudio e voz. Você escreve um texto e ele converte em áudio com uma voz natural.
+
+Agora, a gente não vai explorar todas essas hoje. A gente vai focar nas 3 principais: ChatGPT, Claude e MANUS. Porque essas são as que você vai usar 90% do tempo.
+
+Mas antes de a gente começar a usar, preciso que você entenda um conceito fundamental: **a engenharia de prompt**."
+
+---
+
+### Bloco 3: Engenharia de Prompt 101 (25 min)
+
+**(CENA: Você explicando, com exemplos na tela)**
+
+**VOCÊ:** "Engenharia de prompt é a arte de fazer perguntas certas para a IA. Porque a qualidade da resposta que você recebe é diretamente proporcional à qualidade da pergunta que você faz.
+
+Pense na IA como um estagiário muito inteligente, mas que não sabe ler a mente. Se você der uma instrução vaga, ele vai dar uma resposta vaga. Se você der uma instrução clara e específica, ele vai dar uma resposta clara e específica.
+
+Então vamos aprender a estrutura de um bom prompt. Um bom prompt tem 4 elementos:
+
+**1. Contexto:** Qual é a situação? Qual é o background?
+
+**2. Objetivo:** O que exatamente você quer que a IA faça?
+
+**3. Persona:** Qual é o tom? Quem está escrevendo? Para quem está escrevendo?
+
+**4. Formato:** Como você quer que a resposta seja estruturada?
+
+Vamos ver um exemplo prático. Digamos que você quer que a IA escreva um e-mail de vendas.
+
+**Prompt ruim:**
+'Escreva um e-mail de vendas'
+
+**Prompt bom:**
+'Você é um especialista em vendas B2B. Preciso que você escreva um e-mail de vendas para um gerente de marketing de uma empresa de tecnologia. O objetivo é oferecer uma consultoria de IA para melhorar a produtividade da equipe. O tom deve ser profissional, mas amigável. O e-mail deve ter no máximo 150 palavras e incluir um call-to-action claro.'
+
+Viu a diferença? No segundo prompt, a IA sabe exatamente o que fazer. Ela sabe quem é o público, qual é o tom, qual é o limite de palavras.
+
+Agora vamos fazer um exercício prático aqui comigo. Você tem um negócio de consultoria. Você quer que a IA crie um post para o Instagram sobre produtividade. Como você faria um bom prompt?
+
+**(Pausa para o exercício)**
+
+**VOCÊ:** "Viu? Quando você estrutura bem o prompt, a IA entrega exatamente o que você quer."
+
+---
+
+### Bloco 4: ChatGPT na Prática (25 min)
+
+**(CENA: Tela compartilhada mostrando o ChatGPT)**
+
+**VOCÊ:** "Agora vamos usar o ChatGPT de verdade. Vou mostrar 3 casos de uso que você vai usar constantemente.
+
+**Caso 1: Criação de Conteúdo**
+
+Vou criar um prompt para o ChatGPT escrever um artigo sobre 'Como a IA está mudando o marketing'.
+
+**(Digita o prompt na tela)**
+
+'Você é um especialista em marketing digital. Escreva um artigo de 800 palavras sobre como a IA está mudando o marketing. O artigo deve ser informativo, mas acessível para pessoas que não entendem muito de tecnologia. Inclua 3 exemplos práticos de empresas usando IA.'
+
+**(Mostra a resposta do ChatGPT)**
+
+**VOCÊ:** "Viu? Em segundos, a IA criou um artigo completo. Agora, você não vai usar esse artigo como está. Você vai usar como base, editar, adicionar sua perspectiva pessoal. Mas isso economiza horas de trabalho.
+
+**Caso 2: Brainstorming e Ideação**
+
+Vou criar um prompt para o ChatGPT gerar ideias de conteúdo para uma agência de marketing.
+
+**(Digita o prompt)**
+
+'Sou dono de uma agência de marketing. Preciso de 10 ideias de conteúdo para o Instagram que sejam educativas e que gerem engajamento. O público-alvo são empreendedores. As ideias devem ser criativas e diferentes do que já existe.'
+
+**(Mostra a resposta)**
+
+**VOCÊ:** "Agora eu tenho 10 ideias prontas. Posso escolher as melhores, refinar, e começar a produzir conteúdo.
+
+**Caso 3: Análise e Síntese**
+
+Vou criar um prompt para o ChatGPT analisar um texto longo.
+
+**(Digita o prompt)**
+
+'Analise o texto abaixo e resuma em 3 pontos principais. Depois, me diga qual é a principal conclusão do autor. O texto é: [cola um texto longo aqui]'
+
+**(Mostra a resposta)**
+
+**VOCÊ:** "Isso é muito útil quando você tem que ler muito conteúdo e precisa extrair o essencial rapidinho."
+
+---
+
+### Bloco 5: MANUS - A Plataforma Integrada (20 min)
+
+**(CENA: Tela compartilhada mostrando o MANUS)**
+
+**VOCÊ:** "Agora vamos falar do MANUS. O MANUS é especial porque não é só um modelo de linguagem. É uma plataforma que integra várias ferramentas de IA.
+
+Com o MANUS, você consegue:
+
+- Criar conteúdo (como no ChatGPT)
+- Automatizar processos
+- Integrar com outras ferramentas
+- Ter um histórico de tudo que você fez
+- Colaborar com sua equipe
+
+O legal do MANUS é que ele foi pensado especificamente para produtividade e negócios. Não é genérico. É feito para você ser mais produtivo.
+
+Vou mostrar um exemplo prático. Digamos que você quer automatizar um processo de geração de relatórios. Com o MANUS, você consegue:
+
+1. Conectar uma fonte de dados
+2. Pedir para a IA processar esses dados
+3. Gerar um relatório automaticamente
+4. Enviar esse relatório para as pessoas certas
+
+Tudo isso em minutos, não em horas.
+
+Outro exemplo: você quer criar um mês de conteúdo para o Instagram. Com o MANUS, você consegue:
+
+1. Descrever o tema do mês
+2. Pedir para a IA gerar 30 ideias de posts
+3. Pedir para a IA escrever o texto de cada post
+4. Pedir para a IA gerar as imagens
+5. Tudo pronto para publicar
+
+Isso que levaria dias agora leva horas."
+
+---
+
+### Bloco 6: Encerramento e Próximos Passos (15 min)
+
+**(CENA: Você de volta, olhando para a câmera)**
+
+**VOCÊ:** "E aí, como foi? Muito conteúdo, né? Mas espero que você tenha percebido que essas ferramentas não são complicadas. Elas são intuitivas. A chave é saber como fazer boas perguntas.
+
+Hoje, a gente aprendeu:
+
+- Quais são as principais ferramentas de IA
+- Como fazer bons prompts
+- Como usar ChatGPT na prática
+- Como o MANUS pode automatizar seu trabalho
+
+Mas lembra: essas ferramentas são só ferramentas. O poder real está em você. Em como você usa essas ferramentas para resolver problemas reais.
+
+No e-book de hoje, eu vou detalhar tudo isso e trazer mais exemplos. E tem exercícios práticos para você fazer. Não pule os exercícios, porque é ali que você realmente vai aprender.
+
+Amanhã, no Dia 3, a gente vai ver aplicações reais de IA em negócios. Vamos explorar como empresas estão usando IA para crescer. Vai ser muito inspirador.
+
+Até amanhã!"
+
+**(FIM DO VÍDEO)**

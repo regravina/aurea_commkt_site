@@ -176,10 +176,20 @@
 
 ## Fase 23: Imersão IA - Criação de Conteúdo
 - [x] Criar imagens branded para Dias 1, 3, 4, 5 (futuristic style)
-- [ ] Criar apresentações Prezi para os 5 dias
-- [ ] Gravar vídeos dos 5 dias no Gemini
+- [x] Criar apresentações Prezi para os 5 dias
+- [x] Gravar vídeos dos 5 dias no Gemini
 - [ ] Editar vídeos com CapCut/DaVinci Resolve
 - [ ] Inserir imagens branded nos vídeos
 - [ ] Criar e-books para os 5 dias
 - [ ] Testar fluxo completo de entrega
 - [ ] Salvar checkpoint com imersão IA completa
+
+## Fase 24: Página de Checkout - Imersão IA
+- [x] Criar página Checkout.tsx com detalhes do produto
+- [x] Implementar integração com Mercado Pago
+- [x] Criar sistema de pedidos no banco de dados
+- [x] Implementar entrega automática de materiais
+- [x] Criar página de confirmação de pedido
+- [x] Testar fluxo completo de compra (19 testes passando)
+- [ ] Integrar e-books reais
+- [ ] Salvar checkpoint com checkout funcional

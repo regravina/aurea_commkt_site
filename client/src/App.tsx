@@ -24,6 +24,8 @@ import Testimonials from "./pages/Testimonials";
 import CursoPortugues from "./pages/CursoPorugues";
 import CursoComunicacao from "./pages/CursoComunicacao";
 import ThankYou from "./pages/ThankYou";
+import ImmersionCheckout from "./pages/ImmersionCheckout";
+import ImmersionAccess from "./pages/ImmersionAccess";
 
 function Router() {
   const [location] = useLocation();
@@ -54,6 +56,8 @@ function Router() {
       <Route path={"/curso/portugues"} component={CursoPortugues} />
       <Route path={"/curso/comunicacao"} component={CursoComunicacao} />
       <Route path={"/thank-you"} component={ThankYou} />
+      <Route path={"/checkout/immersion"} component={ImmersionCheckout} />
+      <Route path={"/immersion/access"} component={ImmersionAccess} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

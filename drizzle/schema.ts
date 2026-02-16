@@ -31,7 +31,7 @@ export const products = mysqlTable("products", {
   title: varchar("title", { length: 255 }).notNull(),
   description: text("description"),
   price: int("price").notNull(), // Price in cents (e.g., 1500 = R$ 15.00)
-  type: mysqlEnum("type", ["ebook", "course"]).notNull(),
+  type: mysqlEnum("type", ["ebook", "course", "immersion"]).notNull(),
   status: mysqlEnum("status", ["available", "coming_soon"]).default("available").notNull(),
   image: varchar("image", { length: 255 }),
   downloadUrl: varchar("downloadUrl", { length: 512 }), // URL for e-book download
