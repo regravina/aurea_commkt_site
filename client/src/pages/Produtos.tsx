@@ -57,7 +57,8 @@ export default function Produtos() {
       pages: 120,
       format: "PDF",
       price: "R$ 27,00",
-      link: "https://mpago.la/2aESkDx"
+      link: "https://mpago.la/2aESkDx",
+      preferenceId: "3133855711-8726a2a7-d163-4c5d-b056-0dc98791e847"
     },
     {
       id: 2,
@@ -68,7 +69,8 @@ export default function Produtos() {
       pages: 150,
       format: "PDF",
       price: "R$ 27,00",
-      link: "https://mpago.la/1fL1RQb"
+      link: "https://mpago.la/1fL1RQb",
+      preferenceId: "3133855711-f130d472-415a-4e6e-98fa-181d504e8557"
     },
     {
       id: 3,
@@ -79,7 +81,8 @@ export default function Produtos() {
       pages: 130,
       format: "PDF",
       price: "R$ 27,00",
-      link: "https://mpago.la/1EJZ2Ly"
+      link: "https://mpago.la/1EJZ2Ly",
+      preferenceId: "3133855711-87d85f8a-6b10-4069-bba0-0088f65bd746"
     },
     {
       id: 4,
@@ -90,7 +93,8 @@ export default function Produtos() {
       price: "R$ 27,00",
       pages: 180,
       format: "PDF",
-      link: "https://mpago.la/1cXvgke"
+      link: "https://mpago.la/1cXvgke",
+      preferenceId: "3133855711-ebcdd8bf-4cb1-4b00-a5c4-c1a249d509ee"
     },
     {
       id: 5,
@@ -101,7 +105,8 @@ export default function Produtos() {
       price: "R$ 27,00",
       pages: 200,
       format: "PDF",
-      link: "https://mpago.la/2CX2Crm"
+      link: "https://mpago.la/2CX2Crm",
+      preferenceId: "3133855711-c3164fb9-57ea-4c7c-8de8-caca691eff18"
     },
     {
       id: 6,
@@ -112,7 +117,8 @@ export default function Produtos() {
       price: "R$ 127,00",
       pages: "Total de 780",
       format: "PDF",
-      link: "https://mpago.la/2BUJ2v9"
+      link: "https://mpago.la/2BUJ2v9",
+      preferenceId: "3133855711-3ace640c-7294-4f11-b4d1-0e71a8d2c1f0"
     }
   ];
 
@@ -219,10 +225,14 @@ export default function Produtos() {
                   <div className="space-y-2">
                     <p className="text-sm font-bold text-amber-700 mb-4">{ebook.price}</p>
                     <div className="space-y-2">
-                      {ebook.link ? (
-                        <a href={ebook.link} target="_blank" rel="noopener noreferrer" className="w-full bg-amber-600 hover:bg-amber-700 text-white flex items-center justify-center py-2 px-4 rounded-md text-sm font-medium">
-                          Comprar Agora
-                        </a>
+                      {ebook.preferenceId ? (
+                        <div className="mercadopago-button-container">
+                          <script
+                            src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
+                            data-preference-id={ebook.preferenceId}
+                            data-source="button"
+                          ></script>
+                        </div>
                       ) : (
                         <Button disabled className="w-full bg-gray-400 text-white cursor-not-allowed">
                           Em Breve
