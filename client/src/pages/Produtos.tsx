@@ -11,7 +11,7 @@ export default function Produtos() {
       title: "Domine o Português Básico para Concursos com Aulas Interativas!",
       description: "Domine a Língua Portuguesa com foco em concursos públicos. Aprenda gramática, interpretação de textos e redação com técnicas comprovadas.",
       fullDescription: "Curso completo para dominar o Português para concursos. Abrange gramática, interpretação de textos, redação e simulados. Aulas ao vivo nas terças e quintas à noite.",
-      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030713898/AvnZmyNrFlhmFzrS.jpg",
+      image: "/curso-portugues.jpg",
       price: "R$ 80,00",
       duration: "Acesso por 6 meses",
       modules: 12,
@@ -24,7 +24,7 @@ export default function Produtos() {
       title: "Comunicação Básica",
       description: "Fundamentos essenciais de comunicação. Aprenda técnicas de comunicação clara, persuasiva e eficaz para qualquer contexto.",
       fullDescription: "Curso que aborda os fundamentos da comunicação: linguagem verbal e não verbal, técnicas de apresentação, comunicação em equipe e resolução de conflitos.",
-      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030713898/OFZoOIzVaqnZzPsk.jpg",
+      image: "/curso-comunicacao.jpg",
       price: "R$ 30,00",
       duration: "Acesso por 6 meses",
       modules: 8,
@@ -53,7 +53,7 @@ export default function Produtos() {
       title: "Comunicação Persuasiva",
       description: "Descubra os segredos da comunicação que influencia decisões. Técnicas práticas e estratégias comprovadas.",
       fullDescription: "Um guia completo sobre os princípios da persuasão, técnicas de linguagem e estratégias para influenciar decisões. Ideal para profissionais, empreendedores e comunicadores.",
-      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030713898/nGMsMCegIdIPbsFI.png",
+      image: "/ebooks/aurea_ia_vol1.png",
       pages: 120,
       format: "PDF"
     },
@@ -62,7 +62,7 @@ export default function Produtos() {
       title: "Estratégia de Conteúdo",
       description: "Planeje e execute uma estratégia de conteúdo que atrai, engaja e converte seu público-alvo.",
       fullDescription: "Aprenda a criar um plano de conteúdo estratégico, identificar seu público-alvo, definir temas e medir resultados. Essencial para quem quer crescer através do marketing de conteúdo.",
-      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030713898/HaQZPRyPPfFXRKBe.png",
+      image: "/ebooks/aurea_ia_vol2.png",
       pages: 150,
       format: "PDF"
     },
@@ -71,9 +71,42 @@ export default function Produtos() {
       title: "Branding Linguístico",
       description: "Use a linguagem como ferramenta estratégica para construir uma marca memorável e diferenciada.",
       fullDescription: "Descubra como a linguagem define sua marca. Aprenda a criar uma voz única, mensagens consistentes e identidade linguística que diferencia você da concorrência.",
-      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030713898/YtXrZsTmshtqaquc.png",
+      image: "/ebooks/aurea_ia_vol3.png",
       pages: 130,
       format: "PDF"
+    },
+    {
+      id: 4,
+      title: "Imersão em IA para Empresas - Volume 4",
+      description: "Descubra como a Inteligência Artificial pode revolucionar sua empresa. Guia prático para implementação e estratégias.",
+      fullDescription: "Este e-book aborda a aplicação de IA em diversos setores empresariais, desde otimização de processos até a criação de novos produtos e serviços. Inclui estudos de caso e dicas de implementação.",
+      image: "/ebooks/aurea_ia_vol4.png",
+      price: "R$ 27,00",
+      pages: 180,
+      format: "PDF",
+      link: "#MERCADO_PAGO_LINK_VOL4"
+    },
+    {
+      id: 5,
+      title: "Imersão em IA para Empresas - Volume 5",
+      description: "Aprofunde-se nas tendências futuras da IA e como se preparar para o impacto no mercado de trabalho e nos negócios.",
+      fullDescription: "Explore as inovações mais recentes em IA, como IA generativa, ética em IA e o futuro da automação. Prepare sua empresa para os desafios e oportunidades que virão.",
+      image: "/ebooks/aurea_ia_vol5.png",
+      price: "R$ 27,00",
+      pages: 200,
+      format: "PDF",
+      link: "#MERCADO_PAGO_LINK_VOL5"
+    },
+    {
+      id: 6,
+      title: "Imersão em IA para Empresas - Combo Completo",
+      description: "Adquira todos os 5 volumes da Imersão em IA para Empresas com um desconto especial. Conhecimento completo para transformar seu negócio!",
+      fullDescription: "O combo inclui os volumes 1, 2, 3, 4 e 5, cobrindo desde os fundamentos até as aplicações avançadas e tendências futuras da IA no ambiente corporativo.",
+      image: "/ebooks/aurea_ia_5_isbn.png",
+      price: "R$ 127,00",
+      pages: "Total de 780",
+      format: "PDF",
+      link: "#HOTMART_LINK_COMBO"
     }
   ];
 

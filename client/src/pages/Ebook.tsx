@@ -4,13 +4,75 @@ import { useLocation } from "wouter";
 
 export default function Ebook() {
   const [, navigate] = useLocation();
-  
-  // Check if promotional pricing is active (until March 15, 2025)
-  const today = new Date();
-  const promotionEnd = new Date(2025, 2, 15); // March 15, 2025
-  const isPromotionActive = today <= promotionEnd;
-  const regularPrice = 60;
-  const promotionalPrice = 15;
+
+  const ebooks = [
+    {
+      id: 1,
+      title: "Imersão em IA para Empresas - Volume 1",
+      description: "Descubra como a Inteligência Artificial pode revolucionar sua empresa. Guia prático para implementação e estratégias.",
+      fullDescription: "Este e-book aborda a aplicação de IA em diversos setores empresariais, desde otimização de processos até a criação de novos produtos e serviços. Inclui estudos de caso e dicas de implementação.",
+      image: "/ebooks/aurea_ia_vol1.png",
+      price: "R$ 27,00",
+      pages: 120,
+      format: "PDF",
+      link: "#MERCADO_PAGO_LINK_VOL1"
+    },
+    {
+      id: 2,
+      title: "Imersão em IA para Empresas - Volume 2",
+      description: "Aprofunde-se nas tendências futuras da IA e como se preparar para o impacto no mercado de trabalho e nos negócios.",
+      fullDescription: "Explore as inovações mais recentes em IA, como IA generativa, ética em IA e o futuro da automação. Prepare sua empresa para os desafios e oportunidades que virão.",
+      image: "/ebooks/aurea_ia_vol2.png",
+      price: "R$ 27,00",
+      pages: 150,
+      format: "PDF",
+      link: "#MERCADO_PAGO_LINK_VOL2"
+    },
+    {
+      id: 3,
+      title: "Imersão em IA para Empresas - Volume 3",
+      description: "Use a linguagem como ferramenta estratégica para construir uma marca memorável e diferenciada.",
+      fullDescription: "Descubra como a linguagem define sua marca. Aprenda a criar uma voz única, mensagens consistentes e identidade linguística que diferencia você da concorrência.",
+      image: "/ebooks/aurea_ia_vol3.png",
+      price: "R$ 27,00",
+      pages: 130,
+      format: "PDF",
+      link: "#MERCADO_PAGO_LINK_VOL3"
+    },
+    {
+      id: 4,
+      title: "Imersão em IA para Empresas - Volume 4",
+      description: "Descubra como a Inteligência Artificial pode revolucionar sua empresa. Guia prático para implementação e estratégias.",
+      fullDescription: "Este e-book aborda a aplicação de IA em diversos setores empresariais, desde otimização de processos até a criação de novos produtos e serviços. Inclui estudos de caso e dicas de implementação.",
+      image: "/ebooks/aurea_ia_vol4.png",
+      price: "R$ 27,00",
+      pages: 180,
+      format: "PDF",
+      link: "#MERCADO_PAGO_LINK_VOL4"
+    },
+    {
+      id: 5,
+      title: "Imersão em IA para Empresas - Volume 5",
+      description: "Aprofunde-se nas tendências futuras da IA e como se preparar para o impacto no mercado de trabalho e nos negócios.",
+      fullDescription: "Explore as inovações mais recentes em IA, como IA generativa, ética em IA e o futuro da automação. Prepare sua empresa para os desafios e oportunidades que virão.",
+      image: "/ebooks/aurea_ia_vol5.png",
+      price: "R$ 27,00",
+      pages: 200,
+      format: "PDF",
+      link: "#MERCADO_PAGO_LINK_VOL5"
+    },
+    {
+      id: 6,
+      title: "Imersão em IA para Empresas - Combo Completo",
+      description: "Adquira todos os 5 volumes da Imersão em IA para Empresas com um desconto especial. Conhecimento completo para transformar seu negócio!",
+      fullDescription: "O combo inclui os volumes 1, 2, 3, 4 e 5, cobrindo desde os fundamentos até as aplicações avançadas e tendências futuras da IA no ambiente corporativo.",
+      image: "/ebooks/aurea_ia_5_isbn.png",
+      price: "R$ 127,00",
+      pages: "Total de 780",
+      format: "PDF",
+      link: "#HOTMART_LINK_COMBO"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -34,278 +96,57 @@ export default function Ebook() {
       {/* Hero Section */}
       <section className="py-12 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-            {/* Image */}
-            <div className="order-2 md:order-1">
-              <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030713898/AimvHzNnvzseTumE.png"
-                alt="Retórica e Oratória: a arte de cativar pessoas"
-                className="w-full rounded-lg shadow-lg"
-              />
-            </div>
-
-            {/* Content */}
-            <div className="order-1 md:order-2">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                Retórica e Oratória: a arte de cativar pessoas
-              </h1>
-
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Aprenda as técnicas de retórica e oratória para cativar, persuadir e impactar seu público com eloquência e confiança.
-              </p>
-
-              <div className="mb-8">
-                {isPromotionActive ? (
-                  <>
-                    <div className="flex items-center gap-4 mb-2">
-                      <div className="text-4xl font-bold" style={{ color: "#D4AF37" }}>
-                        R$ {promotionalPrice},00
-                      </div>
-                      <div className="text-xl text-gray-400 line-through">
-                        R$ {regularPrice},00
-                      </div>
-                    </div>
-                    <div className="inline-block bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold mb-2">
-                      🎉 Promoção de Lançamento até 15/03
-                    </div>
-                  </>
-                ) : (
-                  <div className="text-4xl font-bold mb-2" style={{ color: "#D4AF37" }}>
-                    R$ {regularPrice},00
-                  </div>
-                )}
-                <p className="text-gray-600">Disponível no Hotmart</p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://go.hotmart.com/A104321774N?dp=1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <Button
-                    className="w-full hover:bg-amber-700 text-white py-3 rounded-lg transition text-base flex items-center justify-center gap-2"
-                    style={{ backgroundColor: "#D4AF37" }}
-                  >
-                    <Download className="w-5 h-5" />
-                    💳 Comprar com MercadoPago
-                  </Button>
-                </a>
-              </div>
-
-              <div className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                <p className="text-sm text-blue-900">
-                  <strong>ℹ️ Nota:</strong> Você será redirecionado para o Google Play onde poderá escolher entre várias opções de pagamento, incluindo MercadoPago, PIX, Boleto e Cartão de Crédito.
-                </p>
-              </div>
-            </div>
-          </div>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 text-center">
+            Nossos E-books de Imersão em IA para Empresas
+          </h1>
+          <p className="text-lg text-gray-700 mb-6 leading-relaxed text-center max-w-3xl mx-auto">
+            Explore nossa coleção de e-books e aprofunde seus conhecimentos em Inteligência Artificial para transformar seu negócio.
+          </p>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* E-books Grid */}
       <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-900">
-            O que você vai aprender
-          </h2>
-
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 bg-gray-50 rounded-lg border border-gray-200">
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: "#D4AF37" }}>
-                <span className="text-white text-xl font-bold">✓</span>
+            {ebooks.map((ebook) => (
+              <div key={ebook.id} className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition relative">
+                <img src={ebook.image} alt={ebook.title} className="w-full h-64 object-cover rounded-t-2xl" />
+                <div className="p-6">
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">{ebook.title}</h4>
+                  <p className="text-gray-700 text-sm mb-4">{ebook.description}</p>
+                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                    <span className="flex items-center gap-1">
+                      <Download size={16} />
+                      {ebook.pages} páginas
+                    </span>
+                    <span>{ebook.format}</span>
+                  </div>
+                  <p className="text-lg font-bold text-amber-700 mb-4">{ebook.price}</p>
+                  <div className="space-y-2">
+                    {ebook.link && (
+                      <a
+                        href={ebook.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <Button
+                          className="w-full hover:bg-amber-700 text-white py-3 rounded-lg transition text-base flex items-center justify-center gap-2"
+                          style={{ backgroundColor: "#D4AF37" }}
+                        >
+                          <Download className="w-5 h-5" />
+                          Comprar Agora
+                        </Button>
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Técnicas de Oratória</h3>
-              <p className="text-gray-700">
-                Domine as técnicas essenciais para falar em público com confiança e impacto.
-              </p>
-            </div>
-
-            <div className="p-6 bg-gray-50 rounded-lg border border-gray-200">
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: "#D4AF37" }}>
-                <span className="text-white text-xl font-bold">✓</span>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Arte da Persuasão</h3>
-              <p className="text-gray-700">
-                Aprenda a persuadir e influenciar seu público através de argumentos poderosos.
-              </p>
-            </div>
-
-            <div className="p-6 bg-gray-50 rounded-lg border border-gray-200">
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: "#D4AF37" }}>
-                <span className="text-white text-xl font-bold">✓</span>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Impacto e Eloquência</h3>
-              <p className="text-gray-700">
-                Desenvolva sua capacidade de impactar e cativar qualquer audiência com eloquência.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
-
-      {/* E-books Em Breve Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-900">
-            Outros E-books em Breve
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition relative">
-              <div className="absolute top-4 right-4 bg-gray-800 text-white px-3 py-1 rounded-full text-xs font-bold z-10">EM BREVE</div>
-              <div className="w-full h-64 bg-gradient-to-br from-blue-200 to-blue-100 flex items-center justify-center">
-                <span className="text-blue-600 text-4xl font-bold">📚</span>
-              </div>
-              <div className="p-6">
-                <h4 className="text-xl font-bold text-gray-900 mb-2">Comunicação Persuasiva</h4>
-                <p className="text-gray-700 text-sm mb-4">Descubra os segredos da comunicação que influencia decisões. Técnicas práticas e estratégias comprovadas.</p>
-                <Button disabled className="w-full bg-gray-400 text-white cursor-not-allowed">
-                  Em Breve
-                </Button>
-              </div>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition relative">
-              <div className="absolute top-4 right-4 bg-gray-800 text-white px-3 py-1 rounded-full text-xs font-bold z-10">EM BREVE</div>
-              <div className="w-full h-64 bg-gradient-to-br from-green-200 to-green-100 flex items-center justify-center">
-                <span className="text-green-600 text-4xl font-bold">📊</span>
-              </div>
-              <div className="p-6">
-                <h4 className="text-xl font-bold text-gray-900 mb-2">Estratégia de Conteúdo</h4>
-                <p className="text-gray-700 text-sm mb-4">Planeje e execute uma estratégia de conteúdo que atrai, engaja e converte seu público-alvo.</p>
-                <Button disabled className="w-full bg-gray-400 text-white cursor-not-allowed">
-                  Em Breve
-                </Button>
-              </div>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition relative">
-              <div className="absolute top-4 right-4 bg-gray-800 text-white px-3 py-1 rounded-full text-xs font-bold z-10">EM BREVE</div>
-              <div className="w-full h-64 bg-gradient-to-br from-purple-200 to-purple-100 flex items-center justify-center">
-                <span className="text-purple-600 text-4xl font-bold">✨</span>
-              </div>
-              <div className="p-6">
-                <h4 className="text-xl font-bold text-gray-900 mb-2">Branding Linguístico</h4>
-                <p className="text-gray-700 text-sm mb-4">Use a linguagem como ferramenta estratégica para construir uma marca memorável e diferenciada.</p>
-                <Button disabled className="w-full bg-gray-400 text-white cursor-not-allowed">
-                  Em Breve
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
-            Pronto para transformar sua comunicação?
-          </h2>
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Adquira agora o e-book "Retórica e Oratória" e comece sua jornada para se tornar um orador impactante.
-          </p>
-          <a
-            href="https://go.hotmart.com/A104321774N?dp=1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block"
-          >
-            <Button
-              className="hover:bg-amber-700 text-white py-3 px-8 rounded-lg transition text-base flex items-center gap-2"
-              style={{ backgroundColor: "#D4AF37" }}
-            >
-              <Download className="w-5 h-5" />
-              Comprar Agora
-            </Button>
-          </a>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="font-bold mb-4" style={{ color: "#D4AF37" }}>
-                AUREA
-              </h3>
-              <p className="text-gray-400 text-sm">
-                Transforme sua experiência em resultados através da linguística, comunicação e marketing.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4" style={{ color: "#D4AF37" }}>
-                Links
-              </h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>
-                  <button onClick={() => navigate("/")} className="hover:text-white transition">
-                    Home
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => navigate("/sobre")} className="hover:text-white transition">
-                    Sobre
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => navigate("/contato")} className="hover:text-white transition">
-                    Contato
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4" style={{ color: "#D4AF37" }}>
-                Suporte
-              </h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>
-                  <a href="#" className="hover:text-white transition">
-                    FAQ
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition">
-                    Política de Privacidade
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition">
-                    Termos de Uso
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4" style={{ color: "#D4AF37" }}>
-                Contato
-              </h4>
-              <p className="text-sm text-gray-400">
-                <a href="https://wa.me/5548988274343" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
-                  WhatsApp: +55 48 98827-4343
-                </a>
-              </p>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center text-sm gap-4">
-              <p>&copy; 2025 AUREA COMMKT. Todos os direitos reservados.</p>
-              <div className="flex gap-6">
-                <a href="#" className="transition" style={{ color: "#D4AF37" }}>
-                  Política de Privacidade
-                </a>
-                <a href="#" className="transition" style={{ color: "#D4AF37" }}>
-                  Termos de Uso
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
