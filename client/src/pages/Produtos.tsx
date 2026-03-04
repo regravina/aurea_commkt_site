@@ -11,7 +11,7 @@ export default function Produtos() {
       title: "Domine o Português Básico para Concursos com Aulas Interativas!",
       description: "Domine a Língua Portuguesa com foco em concursos públicos. Aprenda gramática, interpretação de textos e redação com técnicas comprovadas.",
       fullDescription: "Curso completo para dominar o Português para concursos. Abrange gramática, interpretação de textos, redação e simulados. Aulas ao vivo nas terças e quintas à noite.",
-      image: "/curso-oratoria.jpg", // Temporário
+      image: "/curso-oratoria.jpg", // Regina, idealmente esta imagem deveria ser específica para o curso de Português. Por enquanto, mantive a de oratória. 
       price: "R$ 80,00",
       duration: "Acesso por 6 meses",
       modules: 12,
@@ -223,13 +223,11 @@ export default function Produtos() {
                   <div className="space-y-2">
                     <p className="text-sm font-bold text-amber-700 mb-4">{ebook.price}</p>
                     <div className="space-y-2">
-                      <div className="mercadopago-button-container">
-                        <script
-                          src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
-                          data-preference-id={ebook.preferenceId}
-                          data-source="button"
-                        ></script>
-                      </div>
+                      <a href={ebook.link} target="_blank" rel="noopener noreferrer">
+                        <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                          Comprar com Mercado Pago
+                        </Button>
+                      </a>
                     </div>
                   </div>
                 </div>
