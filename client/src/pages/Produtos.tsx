@@ -47,7 +47,7 @@ export default function Produtos() {
     }
   ];
 
-  const ebooks = [
+  const /ebooks = [
     {
       id: 1,
       title: "Imersão em IA para Empresas - Volume 1",
