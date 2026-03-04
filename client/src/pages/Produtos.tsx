@@ -47,7 +47,7 @@ export default function Produtos() {
     }
   ];
 
-  const /ebooks = [
+  const ebooks = [
     {
       id: 1,
       title: "Imersão em IA para Empresas - Volume 1",
@@ -113,7 +113,7 @@ export default function Produtos() {
       title: "Imersão em IA para Empresas - Combo Completo",
       description: "Adquira todos os 5 volumes da Imersão em IA para Empresas com um desconto especial. Conhecimento completo para transformar seu negócio!",
       fullDescription: "O combo inclui os volumes 1, 2, 3, 4 e 5, cobrindo desde os fundamentos até as aplicações avançadas e tendências futuras da IA no ambiente corporativo.",
-      image: "/ebooks/capa_imersao_ia.jpg"
+      image: "/ebooks/capa_imersao_ia.jpg",
       price: "R$ 127,00",
       pages: "Total de 780",
       format: "PDF",
@@ -160,9 +160,7 @@ export default function Produtos() {
               <div key={curso.id} className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition relative">
 
                 {curso.status === "Disponível" && (
-                  {curso.status === "Disponível" && (
-                    <div className="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10">DISPONÍVEL</div>
-                  )}
+                  <div className="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10">DISPONÍVEL</div>
                 )}
                 <img src={curso.image} alt={curso.title} className="w-full h-48 object-cover rounded-t-2xl" />
                 <div className="p-6">
