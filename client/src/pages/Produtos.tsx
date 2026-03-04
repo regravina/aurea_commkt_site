@@ -53,7 +53,7 @@ export default function Produtos() {
       title: "Imersão em IA para Empresas - Volume 1",
       description: "Descubra os segredos da comunicação que influencia decisões. Técnicas práticas e estratégias comprovadas.",
       fullDescription: "Um guia completo sobre os princípios da persuasão, técnicas de linguagem e estratégias para influenciar decisões. Ideal para profissionais, empreendedores e comunicadores.",
-      image: "ebooks/aurea_ia_vol1.png",
+      image: "/ebooks/aurea_ia_vol1.png",
       pages: 120,
       format: "PDF",
       price: "R$ 27,00",
