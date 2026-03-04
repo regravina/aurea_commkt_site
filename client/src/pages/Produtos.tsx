@@ -11,7 +11,7 @@ export default function Produtos() {
       title: "Domine o Português Básico para Concursos com Aulas Interativas!",
       description: "Domine a Língua Portuguesa com foco em concursos públicos. Aprenda gramática, interpretação de textos e redação com técnicas comprovadas.",
       fullDescription: "Curso completo para dominar o Português para concursos. Abrange gramática, interpretação de textos, redação e simulados. Aulas ao vivo nas terças e quintas à noite.",
-      image: "/curso-oratoria.jpg", // Regina, idealmente esta imagem deveria ser específica para o curso de Português. Por enquanto, mantive a de oratória. 
+      image: "/curso-portugues.jpg", // Placeholder, Regina, precisamos de uma imagem específica para o curso de Português.
       price: "R$ 80,00",
       duration: "Acesso por 6 meses",
       modules: 12,
@@ -48,6 +48,19 @@ export default function Produtos() {
   ];
 
   const ebooks = [
+    {
+      id: 7,
+      title: "Retórica e Oratória (O Clássico)",
+      description: "Domine a arte de falar em público e aprimore sua retórica com este e-book clássico. Essencial para comunicação eficaz.",
+      fullDescription: "Aprenda as técnicas milenares da retórica e as habilidades modernas da oratória para se comunicar com clareza, persuasão e confiança em qualquer situação.",
+      image: "/curso-oratoria.jpg", // Usando a imagem de oratória por enquanto
+      pages: "Variável", // Ou o número de páginas real
+      format: "E-book",
+      price: "Consulte na Hotmart",
+      link: "https://go.hotmart.com/A104321774N",
+      preferenceId: null // Não se aplica para Hotmart
+    },
+
     {
       id: 1,
       title: "Imersão em IA para Empresas - Volume 1",
