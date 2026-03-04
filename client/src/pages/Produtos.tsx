@@ -11,7 +11,7 @@ export default function Produtos() {
       title: "Domine o Português Básico para Concursos com Aulas Interativas!",
       description: "Domine a Língua Portuguesa com foco em concursos públicos. Aprenda gramática, interpretação de textos e redação com técnicas comprovadas.",
       fullDescription: "Curso completo para dominar o Português para concursos. Abrange gramática, interpretação de textos, redação e simulados. Aulas ao vivo nas terças e quintas à noite.",
-      image: "/curso-portugues.jpg", // Placeholder, Regina, precisamos de uma imagem específica para o curso de Português.
+      image: "/capa_imersao_ia.jpg", // Placeholder, Regina, precisamos de uma imagem específica para o curso de Português.
       price: "R$ 80,00",
       duration: "Acesso por 6 meses",
       modules: 12,
@@ -24,7 +24,7 @@ export default function Produtos() {
       title: "Comunicação Básica",
       description: "Fundamentos essenciais de comunicação. Aprenda técnicas de comunicação clara, persuasiva e eficaz para qualquer contexto.",
       fullDescription: "Curso que aborda os fundamentos da comunicação: linguagem verbal e não verbal, técnicas de apresentação, comunicação em equipe e resolução de conflitos.",
-      image: "/curso-comunicacao-basica.webp",
+      image: "/capa_imersao_ia.jpg",
       price: "R$ 30,00",
       duration: "Acesso por 6 meses",
       modules: 8,
@@ -37,7 +37,7 @@ export default function Produtos() {
       title: "Oratória e Apresentações",
       description: "Domine a arte de falar em público. Desenvolva confiança e impacto em suas apresentações.",
       fullDescription: "Este curso completo te ensina técnicas profissionais de oratória, desde o controle da voz até a linguagem corporal. Aprenda a estruturar apresentações poderosas, lidar com nervosismo e conquistar sua audiência.",
-      image: "/curso-oratoria.jpg",
+      image: "/capa-imersao-ia.jpg",
       price: "Em breve",
       duration: "5 semanas",
       modules: 8,
@@ -53,7 +53,7 @@ export default function Produtos() {
       title: "Retórica e Oratória (O Clássico)",
       description: "Domine a arte de falar em público e aprimore sua retórica com este e-book clássico. Essencial para comunicação eficaz.",
       fullDescription: "Aprenda as técnicas milenares da retórica e as habilidades modernas da oratória para se comunicar com clareza, persuasão e confiança em qualquer situação.",
-      image: "/curso-oratoria.jpg", // Usando a imagem de oratória por enquanto
+      image: "/capa-imersao-ia.jpg", // Usando a imagem de Imersão por enquanto
       pages: "Variável", // Ou o número de páginas real
       format: "E-book",
       price: "Consulte na Hotmart",
