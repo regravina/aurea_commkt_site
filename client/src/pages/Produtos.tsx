@@ -53,7 +53,7 @@ export default function Produtos() {
       title: "Imersão em IA para Empresas - Volume 1",
       description: "Descubra os segredos da comunicação que influencia decisões. Técnicas práticas e estratégias comprovadas.",
       fullDescription: "Um guia completo sobre os princípios da persuasão, técnicas de linguagem e estratégias para influenciar decisões. Ideal para profissionais, empreendedores e comunicadores.",
-      image: "/capa_imersao_ia.jpg",
+      image: "/ebooks/capa_imersao_ia.jpg",
       pages: 120,
       format: "PDF",
       price: "R$ 27,00",
@@ -65,7 +65,7 @@ export default function Produtos() {
       title: "Imersão em IA para Empresas - Volume 2",
       description: "Planeje e execute uma estratégia de conteúdo que atrai, engaja e converte seu público-alvo.",
       fullDescription: "Aprenda a criar um plano de conteúdo estratégico, identificar seu público-alvo, definir temas e medir resultados. Essencial para quem quer crescer através do marketing de conteúdo.",
-      image: "/ebooks/aurea_ia_vol2.png",
+      image: "/ebooks/capa_imersao_ia.jpg",
       pages: 150,
       format: "PDF",
       price: "R$ 27,00",
@@ -77,7 +77,7 @@ export default function Produtos() {
       title: "Imersão em IA para Empresas - Volume 3",
       description: "Use a linguagem como ferramenta estratégica para construir uma marca memorável e diferenciada.",
       fullDescription: "Descubra como a linguagem define sua marca. Aprenda a criar uma voz única, mensagens consistentes e identidade linguística que diferencia você da concorrência.",
-      image: "/ebooks/aurea_ia_vol3.png",
+      image: "/ebooks/capa_imersao_ia.jpg",
       pages: 130,
       format: "PDF",
       price: "R$ 27,00",
@@ -89,7 +89,7 @@ export default function Produtos() {
       title: "Imersão em IA para Empresas - Volume 4",
       description: "Descubra como a Inteligência Artificial pode revolucionar sua empresa. Guia prático para implementação e estratégias.",
       fullDescription: "Este e-book aborda a aplicação de IA em diversos setores empresariais, desde otimização de processos até a criação de novos produtos e serviços. Inclui estudos de caso e dicas de implementação.",
-      image: "/ebooks/aurea_ia_vol4.png",
+      image: "/ebooks/capa_imersao_ia.jpg",
       price: "R$ 27,00",
       pages: 180,
       format: "PDF",
@@ -101,7 +101,7 @@ export default function Produtos() {
       title: "Imersão em IA para Empresas - Volume 5",
       description: "Aprofunde-se nas tendências futuras da IA e como se preparar para o impacto no mercado de trabalho e nos negócios.",
       fullDescription: "Explore as inovações mais recentes em IA, como IA generativa, ética em IA e o futuro da automação. Prepare sua empresa para os desafios e oportunidades que virão.",
-      image: "/ebooks/aurea_ia_vol5.png",
+      image: "/ebooks/capa_imersao_ia.jpg",
       price: "R$ 27,00",
       pages: 200,
       format: "PDF",
@@ -113,7 +113,7 @@ export default function Produtos() {
       title: "Imersão em IA para Empresas - Combo Completo",
       description: "Adquira todos os 5 volumes da Imersão em IA para Empresas com um desconto especial. Conhecimento completo para transformar seu negócio!",
       fullDescription: "O combo inclui os volumes 1, 2, 3, 4 e 5, cobrindo desde os fundamentos até as aplicações avançadas e tendências futuras da IA no ambiente corporativo.",
-      image: "/ebooks/aurea_ia_5_isbn.png",
+      image: "/ebooks/capa_imersao_ia.jpg"
       price: "R$ 127,00",
       pages: "Total de 780",
       format: "PDF",
@@ -158,11 +158,11 @@ export default function Produtos() {
           <div className="grid md:grid-cols-3 gap-8">
             {cursos.map((curso) => (
               <div key={curso.id} className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition relative">
-                {curso.status === "Em Breve" && (
-                  
-                )}
+
                 {curso.status === "Disponível" && (
-                  <div className="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10">DISPONÍVEL</div>
+                  {curso.status === "Disponível" && (
+                    <div className="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10">DISPONÍVEL</div>
+                  )}
                 )}
                 <img src={curso.image} alt={curso.title} className="w-full h-48 object-cover rounded-t-2xl" />
                 <div className="p-6">
@@ -225,19 +225,13 @@ export default function Produtos() {
                   <div className="space-y-2">
                     <p className="text-sm font-bold text-amber-700 mb-4">{ebook.price}</p>
                     <div className="space-y-2">
-                      {ebook.preferenceId ? (
-                        <div className="mercadopago-button-container">
-                          <script
-                            src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
-                            data-preference-id={ebook.preferenceId}
-                            data-source="button"
-                          ></script>
-                        </div>
-                      ) : (
-                        <Button disabled className="w-full bg-gray-400 text-white cursor-not-allowed">
-                          Em Breve
-                        </Button>
-                      )}
+                      <div className="mercadopago-button-container">
+                        <script
+                          src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
+                          data-preference-id={ebook.preferenceId}
+                          data-source="button"
+                        ></script>
+                      </div>
                     </div>
                   </div>
                 </div>
