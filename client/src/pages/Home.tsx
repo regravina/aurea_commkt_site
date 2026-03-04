@@ -49,7 +49,7 @@ export default function Home() {
       id: 1,
       title: "Português para Concursos",
       description: "Domine a Língua Portuguesa com foco em concursos públicos. Aprenda gramática, interpretação de textos e redação com técnicas comprovadas.",
-      image: "/curso-portugues.jpg",
+      image: "/curso-oratoria.jpg", // Temporário até ter a imagem correta
       duration: "6 meses",
       price: "R$ 80,00",
       link: "https://go.hotmart.com/I104320902G?dp=1",
@@ -59,7 +59,7 @@ export default function Home() {
       id: 2,
       title: "Comunicação Básica",
       description: "Fundamentos essenciais de comunicação. Aprenda técnicas de comunicação clara, persuasiva e eficaz para qualquer contexto.",
-      image: "/curso-comunicacao.jpg",
+      image: "/curso-comunicacao-basica.webp",
       duration: "6 meses",
       price: "R$ 30,00",
       link: "https://go.hotmart.com/D104320944X?dp=1",
