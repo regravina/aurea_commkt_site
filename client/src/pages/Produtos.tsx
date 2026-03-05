@@ -45,7 +45,6 @@ export default function Produtos() {
       link: null,
       status: "Em Breve"
     },
-    const ebooks = [
     {
       id: 7,
       title: "Retórica e Oratória (O Clássico)",
@@ -129,7 +128,6 @@ export default function Produtos() {
       link: "https://mpago.la/2BUJ2v9",
       preferenceId: "3133855711-3ace640c-7294-4f11-b4d1-0e71a8d2c1f0"
     }
-  ];
   ];
 
 
