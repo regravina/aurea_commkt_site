@@ -8,7 +8,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-b from-amber-50 to-white">
+      <section className="relative py-24 overflow-hidden bg-cover bg-center" style={{ backgroundImage: "url('/AUREA_FUT.jpeg')" }}>
+  <div className="absolute inset-0 bg-black/40" /> {/* Escurece um pouco para o texto aparecer */}
+  <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
             AUREA <span className="text-amber-600">Comunicação & Marketing</span>
