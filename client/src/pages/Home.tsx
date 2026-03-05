@@ -2,16 +2,29 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook, ArrowRight, Menu, X, Star } from "lucide-react";
 import { useLocation } from "wouter";
+import NewsletterForm from "@/components/NewsletterForm";
 
 export default function Home() {
   const [, navigate] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const scrollToSection = (id: string) => {
+    setMobileMenuOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleWhatsApp = () => {
+    window.open("https://wa.me/5548988274343?text=Olá%20AUREA%20COMMKT%2C%20gostaria%20de%20saber%20mais%20sobre%20seus%20cursos%20e%20serviços.", "_blank" );
+  };
+
   const testimonials = [
     {
       name: "Audrey Soares Rembowski",
       profession: "Turismóloga",
-      content: "Os cursos da Regina transformaram minha comunicação profissional. Consigo apresentar ideias com muito mais confiança.",
+      content: "Os cursos da AUREA COMMKT transformaram minha comunicação profissional. Consigo apresentar ideias com muito mais confiança.",
       rating: 5
     },
     {
@@ -41,11 +54,32 @@ export default function Home() {
               onClick={() => navigate('/')}
             />
           </div>
+          {/* Desktop Menu */}
+          <div className="hidden md:flex gap-8">
             <button onClick={() => navigate('/')} className="hover:text-amber-600">Home</button>
             <button onClick={() => navigate('/produtos')} className="hover:text-amber-600">Vitrine</button>
-            <Button onClick={() => window.open('https://wa.me/5548988274343', '_blank')} className="bg-amber-600 hover:bg-amber-700">Fale Conosco</Button>
+            <Button onClick={handleWhatsApp} className="bg-amber-600 hover:bg-amber-700">Fale Conosco</Button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden text-gray-700"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-200 py-4">
+            <div className="container mx-auto px-4 flex flex-col gap-4">
+              <button onClick={() => navigate('/')} className="text-gray-700 hover:text-gray-900 transition font-medium text-left">Home</button>
+              <button onClick={() => navigate('/produtos')} className="text-gray-700 hover:text-gray-900 transition font-medium text-left">Vitrine</button>
+              <button onClick={handleWhatsApp} className="text-gray-700 hover:text-gray-900 transition font-medium text-left">Fale Conosco</button>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section com sua imagem original */}
@@ -53,10 +87,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="container mx-auto px-4 relative z-10 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight uppercase">
-            AUREA COMUNICAÇÃO <br/>E MARKETING
+            AUREA COMUNICAÇÃO   
+E MARKETING
           </h1>
           <p className="text-xl mb-10 max-w-2xl opacity-90">
-            Transformando décadas de experiência docente em estratégias de autoridade digital.
+            Linguística, Comunicação e Marketing: a experiência de quem ensina aplicada ao seu crescimento pessoal e profissional.
           </p>
           <Button 
             onClick={() => navigate('/produtos')}
@@ -94,7 +129,7 @@ export default function Home() {
                 <span className="text-amber-600 font-bold flex items-center">Saiba mais <ArrowRight size={16} className="ml-2" /></span>
               </div>
             </div>
-
+            
             <div className="group cursor-pointer border rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all" onClick={() => navigate('/produtos')}>
               <img src="/oratoria.jpg" alt="Oratória" className="w-full h-64 object-cover group-hover:scale-105 transition" />
               <div className="p-8">
@@ -117,7 +152,7 @@ export default function Home() {
                 <div className="flex justify-center text-amber-500 mb-4">
                   {[...Array(t.rating)].map((_, i) => <Star key={i} size={18} fill="currentColor" />)}
                 </div>
-                <p className="italic text-gray-700 mb-6">"{t.content}"</p>
+                <p className="italic text-gray-700 mb-6">\"{t.content}\"</p>
                 <h4 className="font-bold text-gray-900">{t.name}</h4>
                 <p className="text-sm text-gray-500">{t.profession}</p>
               </div>
@@ -142,7 +177,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex gap-6">
-            <Instagram onClick={() => window.open('https://instagram.com/aurea_commkt', '_blank')} className="cursor-pointer hover:text-amber-500 transition-colors" size={28} />
+            <Instagram onClick={() => window.open('https://instagram.com/aurea_commkt', '_blank' )} className="cursor-pointer hover:text-amber-500 transition-colors" size={28} />
             <Linkedin className="cursor-pointer hover:text-amber-500 transition-colors" size={28} />
             <Facebook className="cursor-pointer hover:text-amber-500 transition-colors" size={28} />
           </div>
