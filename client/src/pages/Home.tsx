@@ -21,8 +21,8 @@ export default function Home() {
       rating: 5
     },
     {
-      name: "Fabiano Hoffmann",
-      profession: "Pedagogo",
+      name: "Tais Hoffmann",
+      profession: "Pedagoga",
       content: "Ferramentas práticas e didática impecável. Recomendo para qualquer profissional que queira evoluir.",
       rating: 5
     }
@@ -33,8 +33,14 @@ export default function Home() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold text-amber-600">AUREA</div>
-          <div className="hidden md:flex gap-8 items-center font-medium">
+          <div className="flex items-center">
+            <img 
+              src="/AUREA_LOGO.jpeg" 
+              alt="AUREA Logo" 
+              className="h-12 md:h-16 w-auto object-contain cursor-pointer" 
+              onClick={() => navigate('/')}
+            />
+          </div>
             <button onClick={() => navigate('/')} className="hover:text-amber-600">Home</button>
             <button onClick={() => navigate('/produtos')} className="hover:text-amber-600">Vitrine</button>
             <Button onClick={() => window.open('https://wa.me/5548988274343', '_blank')} className="bg-amber-600 hover:bg-amber-700">Fale Conosco</Button>
