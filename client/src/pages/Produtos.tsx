@@ -207,11 +207,10 @@ export default function Produtos() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
+         </div>
+      </section>
     </div>
-    );
+  );
 };
 
 export default Produtos;
- 
