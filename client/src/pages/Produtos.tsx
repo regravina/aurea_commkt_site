@@ -208,8 +208,8 @@ export default function Produtos() {
               </div>
             ))}
          </div>
+        </div>
       </section>
-    </div>
   );
 };
 
