@@ -209,6 +209,9 @@ export default function Produtos() {
             ))}
           </div>
         </div>
-      </section>
+    </div>
+    );
+};
 
+export default Produtos;
  
