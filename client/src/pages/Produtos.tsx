@@ -211,6 +211,4 @@ export default function Produtos() {
         </div>
       </section>
 
-      <section className="py-12 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          
+ 
