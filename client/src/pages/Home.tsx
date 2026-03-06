@@ -77,7 +77,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative py-28 md:py-40 text-white bg-cover bg-center" style={{ backgroundImage: "url("/AUREA_FUT.jpeg")" }}>
+      <section id="home" className="relative py-28 md:py-40 text-white bg-cover bg-center" style={{ backgroundImage: "url(\"/AUREA_FUT.jpeg\")" }}>
         <div className="absolute inset-0 bg-black/60" />
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight uppercase tracking-wide">
