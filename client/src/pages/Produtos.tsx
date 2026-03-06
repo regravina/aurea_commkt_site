@@ -128,7 +128,7 @@ export default function Produtos() {
       title: "Retórica e Oratória (O Clássico)",
       description: "Domine a arte de falar em público e aprimore sua retórica com este e-book clássico. Essencial para comunicação eficaz.",
       fullDescription: "Aprenda as técnicas milenares da retórica e as habilidades modernas da oratória para se comunicar com clareza, persuasão e confiança em qualquer situação.",
-      image: "/oratória1.JPG", 
+      image: "/ebook-retorica.jpg", 
       pages: "Variável", 
       format: "E-book",
       price: "Consulte na Hotmart",
